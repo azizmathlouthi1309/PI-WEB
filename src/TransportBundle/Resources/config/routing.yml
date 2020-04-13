@@ -1,0 +1,57 @@
+transport_homepage:
+    path:     /
+    defaults: { _controller: TransportBundle:Default:index }
+transport_menu:
+    path:     /transport
+    defaults: { _controller: TransportBundle:Default:transport }
+transport_back_menu:
+    path:     /transportmenu
+    defaults: { _controller: TransportBundle:Default:add }
+transport_back_driver:
+    path:     /drivers/add
+    defaults: { _controller: TransportBundle:Default:showdrivers }
+transport_back_driver_delete:
+        path:    /drivers/{id}
+        defaults: { _controller: TransportBundle:Default:deletedrivers }
+transport_back_driver_edit:
+    path:    /driversedit/{id}
+    defaults: { _controller: TransportBundle:Default:showformedit }
+transport_back_vehicule_homepage:
+    path:     /vehicules/add
+    defaults: { _controller: TransportBundle:Default:vehiculeshome }
+transport_back_vehicule_homepage_show:
+    path:     /vehicules/show
+    defaults: { _controller: TransportBundle:Default:vehiculesshow }
+transport_back_vehicule_edit:
+    path:    /vehiculesedit/{id}
+    defaults: { _controller: TransportBundle:Default:showformeditv }
+transport_back_vehicule_delete:
+    path:    /vehicules/{id}
+    defaults: { _controller: TransportBundle:Default:deletevehicules }
+transport_front_check_sms_form:
+    path:   /sms
+    defaults: { _controller: TransportBundle:Default:smsform }
+transport_front_check_sms_send:
+    path:   /sms/send
+    defaults: { _controller: TransportBundle:Default:smssend }
+transport_front_check_mail_send:
+    path:   /mail/send
+    defaults: { _controller: TransportBundle:Default:sendmail }
+transport_back_pdf:
+    path:   /pdf
+    defaults: { _controller: TransportBundle:Default:pdf }
+transport_back_search:
+    path: /searchvehicules
+    defaults: { _controller: TransportBundle:Default:searchresult}
+transport_back_affect:
+    path:    /affect
+    defaults: { _controller: TransportBundle:Default:affect }
+transport_back_affect_add:
+    path:    /affect/add
+    defaults: { _controller: TransportBundle:Default:addaffectation }
+transport_back_affect_delete:
+    path:    /affect/delete/{id}
+    defaults: { _controller: TransportBundle:Default:deleteaffect }
+transport_back_affect_edit:
+    path:    /affect/edit/{id}
+    defaults: { _controller: TransportBundle:Default:editaffect }

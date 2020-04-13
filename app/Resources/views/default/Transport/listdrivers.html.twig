@@ -1,0 +1,36 @@
+{% extends 'admin1.html.twig' %}
+{% block afterheader %}
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <table style="width:80%;
+    position:relative;
+    left: 100px">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Adress</th>
+            <th>Age</th>
+            <th>Phone Number</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+        {% for driver in drivers %}
+        <tr>
+            <td>{{ driver.firstname }}</td>
+            <td>{{ driver.lastname }}</td>
+            <td>{{ driver.adress }}</td>
+            <td>{{ driver.age }}</td>
+            <td>{{ driver.phonenumber }}</td>
+            <td><a href={{ path('transport_back_driver_edit', { 'id': driver.id }) }}><button style="width: 100%">Edit</button></a></td>
+            <td><a href={{ path('transport_back_driver_delete', { 'id': driver.id }) }}><button style="width: 100%">Delete</button></a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ path('transport_back_menu') }}"><button style="background-color: #007bff;
+    position:relative;
+    left: 95px">Add New Driver</button></a>
+{% endblock %}

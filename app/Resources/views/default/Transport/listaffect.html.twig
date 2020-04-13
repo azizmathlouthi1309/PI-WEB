@@ -1,0 +1,31 @@
+{% extends 'admin1.html.twig' %}
+{% block afterheader %}
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <table style="width:80%;
+    position:relative;
+    left: 100px">
+        <tr>
+            <th>Driver First Name</th>
+            <th>Driver Phone Number</th>
+            <th>Grade</th>
+            <th>Vehicule</th>
+            <th>Delete</th>
+        </tr>
+        {% for affectation in affectations %}
+            <tr>
+                <td>{{ affectation.driver.firstname }}</td>
+                <td>{{ affectation.driver.phonenumber }}</td>
+                <td>{{ affectation.grade.name }}</td>
+                <td>{{ affectation.vehicule.brand }}</td>
+                <td><a href={{ path('transport_back_affect_delete', { 'id': affectation.id }) }}><button style="width: 100%">Delete</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ path('transport_back_affect_add') }}"><button style="background-color: #007bff;
+    position:relative;
+    left: 95px">Make an affectation</button></a>
+{% endblock %}

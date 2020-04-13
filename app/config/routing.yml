@@ -1,0 +1,16 @@
+
+
+app:
+    resource: '@AppBundle/routing.yml'
+
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+first:
+    resource: "@FirstBundle/Resources/config/routing.yml"
+    prefix:   /
+
+transport:
+    resource: "@TransportBundle/Resources/config/routing.yml"
+    prefix:   /

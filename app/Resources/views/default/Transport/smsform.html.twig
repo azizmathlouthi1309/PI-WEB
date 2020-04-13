@@ -1,0 +1,11 @@
+{% extends'base.html.twig' %}
+{% block header %}
+{% endblock %}
+{% block afterheader %}
+    <p>enter your Phone Number</p>
+    <form action={{ path('transport_front_check_sms_send') }}>
+    <textarea name="number"></textarea>
+        <input style="position:relative;
+                      left: 50px;" type="submit" name="submit" value="send">
+    </form>
+{% endblock %}

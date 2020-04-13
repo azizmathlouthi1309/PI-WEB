@@ -1,0 +1,61 @@
+{% extends 'admin1.html.twig' %}
+{% block afterheader %}
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <form action="{{ path('transport_back_search') }}" method="POST">
+        <label>Search By Brand:</label><input type="text" onkeyup="aziz()" id="myinput" name="brand" placeholder="Brand">
+    </form>
+    <table id="myTable" style="width:80%;
+    position:relative;
+    left: 100px">
+        <tr>
+            <th>Brand</th>
+            <th>Capacity</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+        {% for vehicule in vehicules %}
+            <tr>
+                <td>{{ vehicule.brand }}</td>
+                <td>{{ vehicule.capacity }}</td>
+                <td>{{ vehicule.type }}</td>
+                <td>{{ vehicule.status }}</td>
+                <td><a href={{ path('transport_back_vehicule_edit', { 'id': vehicule.id }) }}><button style="width: 100%">Edit</button></a></td>
+                <td><a href={{ path('transport_back_vehicule_delete', { 'id': vehicule.id }) }}><button style="width: 100%">Delete</button></a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href={{ path('transport_back_vehicule_homepage') }}><button style="background-color: #007bff;
+    color: white;">Add New Vehicule</button></a>
+    <a href={{ path('transport_back_pdf') }}><button style="background-color: #007bff;
+    color: white;">Generate PDF File</button></a>
+    <script>
+        function aziz() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myinput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+{% endblock %}

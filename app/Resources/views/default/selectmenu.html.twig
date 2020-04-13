@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+{% endblock header %}
+
+{% block afterheader %}
+    {% block msg %}
+        {% for flashMessage in app.session.flashbag.get('notice') %}
+
+            <div class="alert alert-danger">
+                {{ flashMessage }}
+            </div>
+
+        {% endfor %}
+    {% endblock %}
+    <h1>Choose Account Type</h1>
+
+    <form action="{{ path('confirm_type_account') }}" method="get">
+        <input style="position:relative;left: 285px;top: 50px" type="checkbox" name="Parent" value="Parent"><img style="width: 180px;position:relative;left: 200px" src="{{ asset('parent.png') }}">
+        <label style="position:relative;left: 275px" for="vehicle1">Parent</label><br>
+        <input style="position:relative;left: 830px;top:-261px; " type="checkbox" name="Teacher" value="Teacher"><img style="width: 300px;height:250px;position:relative; left: 650px;top: -300px;" src="{{ asset('teacher.png') }}">
+        <label style="position:relative;left: 820px;top: -310px;" for="vehicle2">Teacher</label><br>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <table style="width:100%">
+        <tr>
+            <th>Brand</th>
+            <th>type</th>
+            <th>Status</th>
+            <th>Capacity</th>
+
+
+        </tr>
+        {% for vehicule in vehicules %}
+            <tr>
+                <td>{{ vehicule.brand }}</td>
+                <td>{{ vehicule.type }}</td>
+                <td>{{ vehicule.status }}</td>
+                <td>{{ vehicule.capacity }}</td>
+                </tr>
+        {% endfor %}
+    </table>

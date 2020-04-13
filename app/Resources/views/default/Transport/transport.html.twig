@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+{% endblock %}
+{% block afterheader%}
+    <table style="width:100%">
+        <tr>
+            <th>Driver Name</th>
+            <th>Driver Phone</th>
+            <th>Grade Name</th>
+            <th>Vehicule Status</th>
+        </tr>
+        {% for vehicule in vehicules %}
+            <tr>
+                <td>{{ vehicule.vehicule.brand }}</td>
+                <td>{{ vehicule.grade.name }}</td>
+                <td>{{ vehicule.driver.firstname }}</td>
+                <td>{{ vehicule.vehicule.status }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a href={{ path('transport_homepage') }}><button>Go Back To Home</button></a>
+    <a href={{ path('transport_front_check_sms_form') }}><button>Check Child Class By Sms</button></a>
+{% endblock %}

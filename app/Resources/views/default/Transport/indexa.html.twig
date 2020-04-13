@@ -1,0 +1,11 @@
+{% extends 'admin1.html.twig' %}
+
+{% block msg %}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+
+    {% endfor %}
+{% endblock %}

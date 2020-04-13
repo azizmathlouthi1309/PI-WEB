@@ -1,0 +1,56 @@
+{% extends 'admin1.html.twig' %}
+{% block afterheader %}
+    {{ form_start(f) }}
+
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Add Driver</h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+
+        <div class="card-body">
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">FirstName</label>
+                <div class="col-sm-10">
+                    <input type="text" onkeyup="controledesaisie()" class="form-control" id="firstname" placeholder="Firstname" {{ form_widget(f.firstname) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Lastname</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" onkeyup="controledesaisie()" id="lastname" placeholder="Lastname" {{ form_widget(f.lastname) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Adress</label>
+                <div class="col-sm-10">
+                    <input type="text" onkeyup="controledesaisie()" class="form-control" id="adress" placeholder="Adress" {{ form_widget(f.adress) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Age</label>
+                <div class="col-sm-10444">
+                    <input type="number" onkeyup="controledesaisie()" class="form-control" min="0" id="age" placeholder="Age" {{ form_widget(f.age) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputEmail3" class="col-sm-2 col-form-label">Phone Number</label>
+                <div class="col-sm-10444">
+                    <input type="number" onkeyup="controledesaisie()" class="form-control" min="0" id="phonenumber" placeholder="Phone Number" {{ form_widget(f.Phone_Number) }}
+                </div>
+            </div>
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+            <button type="submit" class="btn btn-info" {{ form_widget(f.Add) }}
+            <button type="reset" class="btn btn-default float-right">Cancel</button>
+        </div>
+        <!-- /.card-footer -->
+    </div>
+    <!-- /.card -->
+
+    </div>
+
+    {{ form_end(f) }}
+{% endblock %}
