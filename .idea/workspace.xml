@@ -1,17 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="650ee631-dd54-430c-a812-ce788586a62c" name="Default Changelist" comment="" />
+    <list default="true" id="650ee631-dd54-430c-a812-ce788586a62c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_13_04_2020_16_30_c.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_13_04_2020_16_31_s.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/KindoF.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/KindoF.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_4_12_20__12_36_PM_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_4_12_20__12_36_PM_c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_4_12_20__12_37_PM_s.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_4_12_20__12_37_PM_s.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/admin1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin1.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/parameters.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/symfony_requirements" beforeDir="false" afterPath="$PROJECT_DIR$/bin/symfony_requirements" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirstBundle/Entity/Event.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FirstBundle/Entity/Participation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -60,6 +93,8 @@
       <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
       <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
       <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1aRGnLmA5kcnXM5lNV3D6lzkAjX" />
@@ -70,6 +105,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
@@ -78,6 +114,7 @@
     <option name="myCommands">
       <command value="c dump-autoload" />
       <command value="s debug:router" />
+      <command value="generate:bundle" />
       <command value="s generate:bundle" />
       <command value="s doctrine:schema:update --force" />
     </option>
@@ -106,6 +143,9 @@
       <updated>1586691159678</updated>
       <workItem from="1586691165799" duration="14000" />
       <workItem from="1586691200234" duration="35757000" />
+      <workItem from="1586791170693" duration="61000" />
+      <workItem from="1586791290548" duration="2822000" />
+      <workItem from="1586795245263" duration="7142000" />
     </task>
     <servers />
   </component>
@@ -121,49 +161,49 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1586733845019" />
-    <state x="407" y="243" key="ComposerCompositePathDialog" timestamp="1586691414128">
+    <state x="407" y="243" key="ComposerCompositePathDialog" timestamp="1586791856114">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="407" y="243" key="ComposerCompositePathDialog/0.0.1366.728@0.0.1366.728" timestamp="1586691414128" />
-    <state x="462" y="106" key="FileChooserDialogImpl" timestamp="1586691446458">
+    <state x="407" y="243" key="ComposerCompositePathDialog/0.0.1366.728@0.0.1366.728" timestamp="1586791856114" />
+    <state x="462" y="106" key="FileChooserDialogImpl" timestamp="1586791876463">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="462" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586691446458" />
-    <state width="1323" height="137" key="GridCell.Tab.0.bottom" timestamp="1586733346926">
+    <state x="462" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586791876463" />
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1586802455574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="137" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586733346926" />
-    <state width="1323" height="137" key="GridCell.Tab.0.center" timestamp="1586733346926">
+    <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586802455574" />
+    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1586802455574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="137" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586733346926" />
-    <state width="1323" height="137" key="GridCell.Tab.0.left" timestamp="1586733346926">
+    <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586802455574" />
+    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1586802455574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="137" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586733346926" />
-    <state width="1323" height="137" key="GridCell.Tab.0.right" timestamp="1586733346926">
+    <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586802455574" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1586802455574">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="137" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586733346926" />
+    <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586802455574" />
     <state x="669" y="319" key="NewPhpClassDialog" timestamp="1586739400747">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="669" y="319" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1586739400747" />
-    <state x="184" y="7" key="SettingsEditor" timestamp="1586691457533">
+    <state x="184" y="7" key="SettingsEditor" timestamp="1586791909221">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586691457533" />
-    <state x="450" y="267" key="SymfonyPathDialog" timestamp="1586691447720">
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586791909221" />
+    <state x="450" y="267" key="SymfonyPathDialog" timestamp="1586791879678">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="450" y="267" key="SymfonyPathDialog/0.0.1366.728@0.0.1366.728" timestamp="1586691447720" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586691165785">
+    <state x="450" y="267" key="SymfonyPathDialog/0.0.1366.728@0.0.1366.728" timestamp="1586791879678" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586791175479">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586691165785" />
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1586731511542">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586791175479" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1586797069225">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1586731511542" />
+    <state x="339" y="162" width="672" height="677" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1586797069225" />
   </component>
 </project>

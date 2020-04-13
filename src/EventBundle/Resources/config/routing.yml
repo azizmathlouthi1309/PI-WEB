@@ -1,0 +1,48 @@
+event_homepage:
+    path:     /
+    defaults: { _controller: EventBundle:Default:index }
+eventF_homepage:
+    path:     /indexF
+    defaults: { _controller: EventBundle:Default:indexF }
+event_add:
+    path:     /add
+    defaults: { _controller: EventBundle:Event:add }
+event_read:
+    path:     /read
+    defaults: { _controller: EventBundle:Event:read }
+event_readF:
+    path:     /readF
+    defaults: { _controller: EventBundle:Event:readF }
+event_delete:
+    path:     /delete/{id}
+    defaults: { _controller: EventBundle:Event:delete }
+event_update:
+    path:     /update/{id}
+    defaults: { _controller: EventBundle:Event:update }
+event_detail:
+    path:     /detail/{id}
+    defaults: { _controller: EventBundle:Event:detail }
+event_search:
+    path:     /searc
+    defaults: { _controller:  EventBundle:Event:search }
+ajax_search:
+    path:     /search
+    defaults: { _controller: EventBundle:Event:searchAjax }
+forum_add:
+    path:     /addd/{id}
+    defaults: { _controller: EventBundle:Event:addForum }
+forum_read:
+    path:     /readd
+    defaults: { _controller: EventBundle:Event:readForum }
+forum_delete:
+    path:     /deletee/{id}
+    defaults: { _controller: EventBundle:Event:deleteForum }
+forum_deleteF:
+    path:     /deleteee/{id}
+    defaults: { _controller: EventBundle:Event:deleteForumF }
+parti_add:
+    path:     /adddd/{id}
+    defaults: { _controller: EventBundle:Event:Participation}
+parti_read:
+    path:     /readdd
+    defaults: { _controller: EventBundle:Event:readPar }

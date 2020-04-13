@@ -1,0 +1,84 @@
+{% extends 'admin1.html.twig' %}
+{% block event %}
+    {{ form_start(eventF) }}
+    <div class="card card-info">
+        <div class="card-header">
+            <h3 class="card-title">Add Event</h3>
+        </div>
+        <div class="card-body">
+            <table>
+                <thead>
+
+                <tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" class="form-control" placeholder="name" {{ form_widget(eventF.name, {'attr':{'novalidate':'novalidate'}}) }}
+                        {{ form_errors(eventF) }}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Description </td>
+                    <td>
+
+                        <input type="text" class="form-control" placeholder="description" {{ form_widget(eventF.description, {'attr':{'novalidate':'novalidate'}}) }}
+                        {{ form_errors(eventF) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td> Date</td>
+                    <td>
+                        {{ form_widget(eventF.date, {'attr':{'novalidate':'novalidate'}}) }}
+                    </td>
+
+                    {{ form_errors(eventF) }}
+
+                </tr>
+                <tr>
+                    <td> Hour begin</td>
+                    <td>
+
+                        <input type="text"  class="form-control" placeholder="hour begin" {{ form_widget(eventF.hourBegin, {'attr':{'novalidate':'novalidate'}}) }}
+                        {{ form_errors(eventF) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td> Hour end</td>
+                    <td>
+
+                        <input type="text"  class="form-control"  placeholder="hour end" {{ form_widget(eventF.hourEnd, {'attr':{'novalidate':'novalidate'}}) }}
+                        {{ form_errors(eventF) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td> Capacity</td>
+                    <td>
+
+                        <input type="text"  class="form-control"  placeholder="capacity" {{ form_widget(eventF.capacity, {'attr':{'novalidate':'novalidate'}}) }}
+
+                        {{ form_errors(eventF) }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Picture</td>
+
+                    <td class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFile" {{ form_widget(eventF.picture, {'attr':{'novalidate':'novalidate'}}) }}
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                    </td>
+
+                </tr>
+                <!-- <label for="customFile">Custom File</label> -->
+
+
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div >
+
+        <button type="submit"  value="Edit" formnovalidate class="btn btn-primary">Edit</button>
+        <button type="reset" class="btn btn-default float-right">Cancel</button>
+    </div>
+    {{ form_end(eventF, {'attr':{'novalidate':'novalidate'}}) }}
+{% endblock %}

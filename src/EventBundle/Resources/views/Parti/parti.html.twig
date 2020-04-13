@@ -1,0 +1,54 @@
+{% extends 'admin1.html.twig' %}
+{% block event %}
+    <!--
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <form class="form-inline ml-3" method="get" action="{{ path('event_search') }}">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="search..." name="motcle" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </nav>
+    -->
+
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <table id="example2" class="table table-bordered table-hover" >
+                        <thead >
+                        <tr align="left">
+                            <th>Parent name</th>
+                            <th>Event name</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for e in participations %}
+                            <tr>
+                                <td>{{ e.getParentId().getUsername() }}  </td>
+                                <td>{{ e.getEvent().getName() }} </td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-md-7">
+            <div class="dataTables_paginate paging_simple_numbers">
+                <ul class="pagination">
+                    <li class="pagnate_button page-item previous">
+                        {{ knp_pagination_render(participations) }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}

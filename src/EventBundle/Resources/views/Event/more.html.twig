@@ -1,0 +1,338 @@
+{% block head %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="shortcut icon" href="{{ asset('images/KINDO.png') }}" />
+        <title>KINDO</title>
+        {% block stylesheet %}
+
+            <link rel='stylesheet' href="{{ asset('revslider/css/settings.css') }}" type='text/css' media='all' />
+
+            <link rel='stylesheet' href= "{{ asset('css/font-awesome.css') }}" type='text/css' media='all' />
+            <link rel='stylesheet' href= "{{ asset('css/jquery.fancybox.css') }}" type='text/css' media='all' />
+            <link rel='stylesheet' href= "{{ asset('css/select2.css') }}" type='text/css' media='all' />
+            <link rel='stylesheet' href= "{{ asset('css/animate.css') }}" type='text/css' media='all' />
+            <link rel='stylesheet' href= "{{ asset('css/main.css') }}" type='text/css' media='all' />
+            <link rel='stylesheet' href= "{{ asset('css/shop.css') }}" type='text/css' media='all' />
+            <link rel='stylesheet' href="{{ asset('tuner/style.css') }}" type='text/css' media='all' />
+            <link rel="icon" href= "{{ asset('img/cropped-favicon-32x32.png') }} " sizes="32x32" />
+            <link rel="icon" href="{{ asset('img/cropped-favicon-192x192.png') }}" sizes="192x192" />
+            <link rel="apple-touch-icon-precomposed" href="{{ asset('img/cropped-favicon-270x270.png') }}">
+            <meta name="msapplication-TileImage" content="img/cropped-favicon-270x270.png">
+        {% endblock %}
+        {% block javascript1 %}
+
+            <script type='text/javascript' src="{{ asset('js/jquery.js') }}"></script>
+            <script type='text/javascript' src= "{{ asset('js/jquery-migrate.min.js') }}"></script>
+            <script type='text/javascript' src= "{{ asset('revslider/js/jquery.themepunch.tools.min.js') }}"></script>
+            <script type='text/javascript' src= "{{ asset('revslider/js/jquery.themepunch.revolution.min.js') }}"></script>
+            <script type="text/javascript" src= "{{ asset('revslider/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+            <script type="text/javascript" src= "{{ asset('revslider/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+            <script type="text/javascript" src= "{{ asset('revslider/js/extensions/revolution.extension.navigation.min.js') }}"></script>
+            <script type="text/javascript" src= "{{ asset('revslider/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+        {% endblock %}
+
+    </head>
+
+{% endblock %}
+<header class='site_header logo-in-menu' data-menu-after="3">
+    {% block header %}
+        <div class="header_box">
+            <div class="container">
+                <!-- logo -->
+                <div class="header_logo_part with_border" role="banner">
+                    <a  href="#"><img style="width: 150px;
+                                                             height: 110px" src="{{ asset('logo.png') }}"/></a>
+                </div>
+                <!-- / logo -->
+                <!-- menu -->
+                <div class="header_nav_part">
+                    <nav class="main-nav-container a-right">
+                        <div class="mobile_menu_header">
+                            <i class="mobile_menu_switcher"><span></span><span></span><span></span></i>
+                        </div>
+                        <ul style="position: center;id="menu-main-menu" class="main-menu menu-bees">
+                        <!-- menu item -->
+                        <li class="menu-item current-menu-item page_item current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children bees-start">
+                            <a href="#">
+                                <div class="bees bees-start"><span></span>
+                                    <div class="line-one"></div>
+                                    <div class="line-two"></div>
+                                </div>Home
+                                <div class="canvas_wrapper">
+                                    <canvas class="menu_dashed"></canvas>
+                                </div>
+                            </a>
+                            <span class='button_open'></span>
+
+                        </li>
+                        <!-- / menu item -->
+                        <!-- menu item -->
+
+                        <!-- / menu item -->
+                        <!-- menu item -->
+                        <li class="menu-item menu-item-has-children"><a href="#">Blog<div class="canvas_wrapper"><canvas class="menu_dashed"></canvas></div></a>
+                            <span class='button_open'></span>
+
+                        </li>
+                        <!-- / menu item -->
+                        <!-- menu item -->
+                        {% if app.user %}
+                            <li class="menu-item menu-item-has-children"><a href="#">Services<div class="canvas_wrapper"><canvas class="menu_dashed"></canvas></div></a>
+                                <span class='button_open'></span>
+                                <ul class="sub-menu">
+                                    <li class="menu-item back"><a href="#"><em>←</em>&nbsp;BACK</a>
+                                    </li>
+                                    <li class="menu-item"><a href="page-about-us.html">Classes & activities</a></li>
+                                    <li class="menu-item"><a href="page-services-2.html">Parent's Space</a></li>
+                                    <li class="menu-item"><a href="{{ path('event_readF')}}">Events</a></li>
+                                    <li class="menu-item"><a href="page-our-team.html">Nursery & Restauration</a></li>
+                                    <li class="menu-item"><a href="{{path('transport_menu')}}">Transport Space</a></li>
+                                </ul>
+                            </li>
+                        {% else %}
+                            <li class="menu-item menu-item-has-children"><a href="#">Forum<div class="canvas_wrapper"><canvas class="menu_dashed"></canvas></div></a>
+                                <span class='button_open'></span>
+
+                            </li>
+                        {% endif %}
+                        <!-- / menu item -->
+                        <!-- menu item -->
+
+                        {% if app.user %}
+                            <li class="menu-item menu-item-has-children right"><a href="#">Profile<div class="canvas_wrapper"><canvas class="menu_dashed"></canvas></div></a>
+                            </li>
+                        {% else %}
+                            <li class="menu-item menu-item-has-children right"><a href="{{ path('fos_user_security_login') }}">Login<div class="canvas_wrapper"><canvas class="menu_dashed"></canvas></div></a>
+                            </li>
+                        {% endif %}
+                        <!-- / menu item -->
+                        <!-- menu item -->
+                        {% if app.user %}
+                            <li class="menu-item right bees-end">
+                                <a href="{{ path('fos_user_security_logout') }}">
+                                    <div class="bees bees-end"><span></span>
+                                        <div class="line-one"></div>
+                                        <div class="line-two"></div>
+                                    </div>Logout
+                                    <div class="canvas_wrapper">
+                                        <canvas class="menu_dashed"></canvas>
+                                    </div>
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="menu-item right bees-end">
+                                <a href="{{ path('fos_user_registration_register') }}">
+                                    <div class="bees bees-end"><span></span>
+                                        <div class="line-one"></div>
+                                        <div class="line-two"></div>
+                                    </div>Register
+                                    <div class="canvas_wrapper">
+                                        <canvas class="menu_dashed"></canvas>
+                                    </div>
+                                </a>
+                            </li>
+                        {% endif %}
+
+                        <!-- / menu item -->
+                        </ul>
+                    </nav>
+                </div>
+                <!-- / menu -->
+            </div>
+        </div>
+    {% endblock %}
+</header>
+{% block body %}
+    <body class="page wide wave-style">
+    <div class="page">
+
+        <!-- / top panel -->
+        <!-- header container -->
+        <div class='header_cont'>
+            <!-- header mask -->
+            <div class='header_mask'>
+                <div class='header_pattern'></div>
+                <div class='header_img'></div>
+            </div>
+            <!-- / header mask -->
+            <!-- menu caontainer -->
+            <!-- #masthead -->
+        </div>
+        <!-- breadcrumbs -->
+        <section class='page_title wave'>
+            <div class='container'>
+                <div class='title'>
+                    <h1> <a href="{{ path('event_readF') }} "> Events </a></h1> </div>
+                <nav class="bread-crumbs">Pages<i class="delimiter fa fa-chevron-right"></i><span class="current">Events</span></nav>
+                <!-- .breadcrumbs -->
+            </div>
+            <canvas class='breadcrumbs' data-bg-color='#f8f2dc' data-line-color='#f9e8b2'></canvas>
+        </section>
+        <!-- / breadcrumbs -->
+        <!-- main container -->
+        <div id="main" class="site-main">
+            <div class="page_content single_sidebar">
+                <!-- pattern container / -->
+                <div class='left-pattern pattern pattern-2'></div>
+                <div class='container'>
+                    <!-- sidebar -->
+
+                    <!-- / sidebar -->
+                    <!-- main -->
+
+                    <main>
+                        <div class="grid_row">
+                            <!-- blog container -->
+                            <section class="news news-large">
+                                <div class="cws_wrapper">
+                                    <div class="grid">
+                                        <!-- blog item -->
+                                        <article class='item large'>
+                                            <div class='post_header_def_post'>
+
+                                                <div class="post_info_header">
+                                                    <h3 class="ce_title">{{ name }}</h3> </div>
+                                            </div>
+                                            <div class='media_info_wrapper'>
+                                                <div class="media_part">
+                                                    <div class='pic'><img src="{{ asset('uploads/images/'~ picture) }}"/>
+                                                        <div class='hover-effect'></div>
+                                                        <div class='links_popup animate'>
+                                                            <div class='link_cont'>
+                                                                <div class='link'>
+                                                                    <a class='fancy' href='{{ asset('uploads/images/'~ picture) }}'><i class='fa fa-camera'></i></a>
+                                                                    <div class="link-item-bounce"></div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="link-toggle-button">
+                                                                <i class="fa fa-plus link-toggle-icon"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class='post_content_wrap'>
+                                                <div class='post_content'>
+                                                    <p> {{ description }}</p>
+                                                </div>
+                                                <div class='post_content'>
+                                                    <p> {{ hourBegin}} h- {{ hourEnd }} h</p>
+                                                </div>
+                                                <div class='meta_cont_wrapper'>
+                                                    <div class='meta_cont'>
+                                                        <div class="post_info">
+                                                            <div class='date_default'><i class='fa fa-calendar'></i> {{ date|date('d ,m, y') }}</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <section class='page_title wave'>
+                                                <div class='container'>
+                                                    <div class='title'>
+                                                        <h1>  Forum </h1> </div>
+
+                                                    <!-- .breadcrumbs -->
+                                                </div>
+                                            </section>
+                                                <div class='meta_cont_wrapper'>
+                                                    <div class='meta_cont'>
+                                                        <form class="form-inline ml-3" method="get" action="{{ path('forum_add',{'id':id}) }}"class="cf-form contact-form" novalidate="novalidate">
+                                                          <p><span class="cf-form-control-wrap your-message"><input type="text" name="message" cols="39" rows="6" class="" aria-invalid="false" placeholder="Message"></span></p>
+
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+                                          {% for f in forums %}
+                                            <div class="media mb-4">
+                                                <div class="media-body">
+                                                   <p> <h5 class="mt-0">{{ forums.getUser().getUsername() }}</h5> <p>{{ forums.getMessage() }}</p> </p>
+
+                                                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                                        {% if(forums.user.id== app.user.id) %}
+
+                                                            <!-- Modal -->
+                                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog" role="document">
+                                                                    <div class="modal-content">
+
+                                                                        <div class="modal-footer">
+                                                                            <a href="{{ path('forum_deleteF',{'id': forums.getId()}) }}"><button type="button" class="btn btn-primary">Delete Comment</button></a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {% else %}
+                                                        {% endif %}
+                                                    {% elseif is_granted('IS_AUTHENTICATED_ANONYMOUSLY') %}
+                                                        <br>
+
+                                                    {% endif %}
+
+                                                </div>
+
+                                            </div>
+                                          {% endfor %}
+
+                                            <div class='separator-box'>
+                                                <canvas class='separator' width='1170' data-line-color='#f9e8b2'></canvas>
+                                            </div>
+
+                                        </article>
+
+                                    </div>
+
+                                </div>
+                            </section>
+                            <!-- / blog container -->
+                        </div>
+                    </main>
+                    <!-- / main -->
+
+                </div>
+                <div class='right-pattern pattern pattern-2'></div>
+                <!-- footer image container / -->
+                <div class="footer_image"></div>
+            </div>
+            <!-- pattern container / -->
+
+
+            <!-- svg filter -->
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" style='display:none;'>
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                        <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 19 -9" result="goo" />
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                    </filter>
+                </defs>
+            </svg>
+            <!-- / svg filter -->
+        </div>
+        <!-- #main -->
+        <!-- footer -->
+    </div>
+
+
+    {% block javascript2 %}
+
+        <script type='text/javascript' src= "{{  asset('tuner/tuner/js/colorpicker.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('tuner/tuner/js/scripts.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/retina_1.3.0.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/modernizr.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/owl.carousel.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/TweenMax.min.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/jquery.isotope.min.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/jquery.fancybox.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/select2.min.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/wow.min.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/jquery.validate.min.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/jquery.form.min.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/scripts.js')}}"></script>
+        <script type='text/javascript' src= "{{  asset('js/jquery.tweet.js')}}"></script>
+    {% endblock %}
+
+    </body>
+{% endblock %}

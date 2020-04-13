@@ -20,6 +20,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new TransportBundle\TransportBundle(),
             new FirstBundle\FirstBundle(),
+            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new EventBundle\EventBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

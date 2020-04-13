@@ -1,0 +1,133 @@
+{% extends 'admin1.html.twig' %}
+{% block event %}
+
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <form class="form-inline ml-3" method="get" action="{{ path('event_search') }}">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="search..." name="motcle" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </nav>
+ <!--
+
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <form class="form-inline ml-3">
+            <div class="input-group input-group-sm">
+                <input class="form-control form-control-navbar" type="search" placeholder="search..." id="search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </nav>
+    -->
+    <ul class="nav" id="side-menu">
+        <li>
+            <a href="#">Entities<span class="fa arrow"></span></a>
+            <ul class="nav nav-second-level" id="entitiesNav">
+            </ul>
+        </li>
+    </ul>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            var searchRequest = null;
+            $("#search").keyup(function() {
+                var minlength = 1;
+                var that = this;
+                var value = $(this).val();
+                var entitySelector = $("#entitiesNav").html('');
+                if (value.length >= minlength ) {
+                    if (searchRequest != null)
+                        searchRequest.abort();
+                    searchRequest = $.ajax({
+                        type: "GET",
+                        url: "{{ path('ajax_search') }}",
+                        data: {
+                            'q' : value
+                        },
+                        dataType: "text",
+                        success: function(msg){
+                            //we need to check if the value is the same
+                            if (value===$(that).val()) {
+                                var result = JSON.parse(msg);
+                                $.each(result, function(key, arr) {
+                                    $.each(arr, function(id, value) {
+                                        if (key === 'events')
+                                        {
+                                            if (id !== 'error') {
+                                                console.log(value[0]);
+                                                entitySelector.append('<li><b><img src="/uploads/images/'+value[0]+'" style="width: 20px; height: 20px"/>'+'</a></li>');
+                                            } else {
+                                                entitySelector.append(''+value+'');
+                                            }
+                                        }
+                                    });
+                                });
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+    <section class="content">
+    <div class="row">
+    <div class="col-12">
+    <div class="card">
+<table id="example2" class="table table-bordered table-hover" >
+    <thead >
+    <tr >
+        <th>Name</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Hour Begin</th>
+        <th>Hour End</th>
+        <th>Capacity</th>
+        <th>Picture</th>
+        <th>Delete</th>
+        <th>Edit</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for e in events %}
+        <tr>
+            <td>{{ e.name }}  </td>
+            <td>{{ e.description }} </td>
+            <td>{{ e.date|date('d/m/y') }} </td>
+            <td>{{ e.hourBegin }} </td>
+            <td>{{ e.hourEnd }} </td>
+            <td>{{ e.capacity }} </td>
+            <td> <img src="{{ asset('uploads/images/'~ e.picture) }}" width="20" height="20" > </td>
+            <td> <a href="{{ path('event_delete',{'id':e.id}) }}" > <button type="submit" class="btn btn-primary" style="background-color : #B22222;  border-color:#B22222;"> Delete</button>  </a> </td>
+            <td> <a href="{{ path('event_update',{'id':e.id}) }}" > <button type="submit" class="btn btn-primary" style="background-color :  #006080;  border-color :  #006080;">  Edit</button>   </a> </td>
+
+        </tr>
+    {% endfor %}
+    </tbody>
+
+</table>
+</div>
+    </div>
+    </div>
+
+<div class="col-sm-12 col-md-7">
+    <div class="dataTables_paginate paging_simple_numbers">
+<ul class="pagination">
+    <li class="pagnate_button page-item previous">
+    {{ knp_pagination_render(events) }}
+    </li>
+</ul>
+    </div>
+</div>
+    </section>
+{% endblock %}
