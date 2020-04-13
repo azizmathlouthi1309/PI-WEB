@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+{% block header %}
+{% endblock %}
+{% block afterheader %}
+    {{ include('@FOSUser/Security/login_content.html.twig') }}
+    <a href="{{ path('homepage') }}"><button style="display: inline-block;
+    font-size: 1.3em;
+    line-height: 1;
+    padding: 8px 34px;
+    border-radius: 7px;
+    border: none;
+    background-color: #fec20b;
+    color: white;
+    margin-bottom: 5px;">Go Back</button></a>
+{% endblock %}
+
