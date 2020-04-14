@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="650ee631-dd54-430c-a812-ce788586a62c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/app/Resources/views/admin1.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/admin1.html.twig" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/Transport/listpdf.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/default/Transport/listpdf.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransportBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportBundle/Controller/DefaultController.php" afterDir="false" />
+>>>>>>> c933cd28b25dc416b8f3bf9248fdc6f722179132
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,8 +123,13 @@
       <workItem from="1586691200234" duration="35757000" />
       <workItem from="1586791170693" duration="61000" />
       <workItem from="1586791290548" duration="2822000" />
+<<<<<<< HEAD
       <workItem from="1586795245263" duration="7721000" />
       <workItem from="1586864637318" duration="821000" />
+=======
+      <workItem from="1586795245263" duration="7142000" />
+      <workItem from="1586847277490" duration="1885000" />
+>>>>>>> c933cd28b25dc416b8f3bf9248fdc6f722179132
     </task>
     <servers />
   </component>
@@ -171,10 +181,17 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="450" y="267" key="SymfonyPathDialog/0.0.1366.728@0.0.1366.728" timestamp="1586791879678" />
+<<<<<<< HEAD
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586864732200">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586864732200" />
+=======
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1586847278719">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1586847278718" />
+>>>>>>> c933cd28b25dc416b8f3bf9248fdc6f722179132
     <state x="339" y="162" width="672" height="677" key="run.anything.popup" timestamp="1586797069225">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
