@@ -55,3 +55,6 @@ transport_back_affect_delete:
 transport_back_affect_edit:
     path:    /affect/edit/{id}
     defaults: { _controller: TransportBundle:Default:editaffect }
+transport_email_send:
+    path: /sendemail
+    defaults: { _controller: TransportBundle:Default:sendmail }

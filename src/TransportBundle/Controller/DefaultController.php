@@ -39,12 +39,9 @@ class DefaultController extends Controller
                     $nb_veh++;
                 }
             }
-            foreach ($drivers as $driver)
-            {
-                foreach ($affectations as $affect)
-                {
-                    if($affect->getDriver()->getId()==$driver->getId())
-                    {
+            foreach ($drivers as $driver) {
+                foreach ($affectations as $affect) {
+                    if ($affect->getDriver()->getId() == $driver->getId()) {
                         $nb_driv++;
                     }
                 }
@@ -56,7 +53,7 @@ class DefaultController extends Controller
             );
             $this->get('session')->getFlashBag()->add(
                 'notice',
-                count($drivers)-$nb_driv . '  (Driver/s) are/is free'
+                count($drivers) - $nb_driv . '  (Driver/s) are/is free'
             );
             return $this->render('default/transport/indexa.html.twig');
 
@@ -321,8 +318,7 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $affectations = $em->getRepository(Traffectation::class)->findAll();
 
-            if($form->getData()->getGrade()->getNbchild() > $form->getData()->getVehicule()->getCapacity())
-            {
+            if ($form->getData()->getGrade()->getNbchild() > $form->getData()->getVehicule()->getCapacity()) {
                 $this->get('session')->getFlashBag()->add(
                     'notice',
                     'Vehicule cant support the number of children'
@@ -342,8 +338,7 @@ class DefaultController extends Controller
                         'Vehicule is already affected '
                     );
                     return $this->redirectToRoute('transport_back_affect_add');
-                }
-                else if ($form->getData()->getGrade()->getId() == $aff->getGrade()->getId()) {
+                } else if ($form->getData()->getGrade()->getId() == $aff->getGrade()->getId()) {
                     $this->get('session')->getFlashBag()->add(
                         'notice',
                         'Class already affected'
@@ -393,13 +388,12 @@ class DefaultController extends Controller
             ->getForm();
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            if($form->getData()->getGrade()->getNbchild() > $form->getData()->getVehicule()->getCapacity())
-            {
+            if ($form->getData()->getGrade()->getNbchild() > $form->getData()->getVehicule()->getCapacity()) {
                 $this->get('session')->getFlashBag()->add(
                     'notice',
                     'Vehicule cant support the number of children'
                 );
-                return $this->redirectToRoute('transport_back_affect_edit', array('id'=>$id));
+                return $this->redirectToRoute('transport_back_affect_edit', array('id' => $id));
             }
             foreach ($affectations as $aff) {
                 if ($form->getData()->getDriver()->getId() == $aff->getDriver()->getId()) {
@@ -407,13 +401,13 @@ class DefaultController extends Controller
                         'notice',
                         'Driver is already affected '
                     );
-                    return $this->redirectToRoute('transport_back_affect_edit', array('id'=>$id));
+                    return $this->redirectToRoute('transport_back_affect_edit', array('id' => $id));
                 } else if ($form->getData()->getVehicule()->getStatus() == 1) {
                     $this->get('session')->getFlashBag()->add(
                         'notice',
                         'Vehicule is already affected '
                     );
-                    return $this->redirectToRoute('transport_back_affect_edit', array('id'=>$id));
+                    return $this->redirectToRoute('transport_back_affect_edit', array('id' => $id));
                 }
                 $em->flush();
                 $affectations = $em->getRepository(Traffectation::class)->findAll();
@@ -428,27 +422,24 @@ class DefaultController extends Controller
 
     public function sendmailAction()
     {
-        // Create the Transport
-        $transport = (new Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
+        $transport = (new \Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
             ->setUsername('aziz13mth@gmail.com')
-            ->setPassword('abdou15121963bab')
-        ;
+            ->setPassword('abdou15121963bab');
 
 // Create the Mailer using your created Transport
-        $mailer = new Swift_Mailer($transport);
+        $mailer = new \Swift_Mailer($transport);
 
 // Create a message
         $body = 'Hello, <p>Email sent through <span style="color:red;">Swift Mailer</span>.</p>';
 
-        $message = (new Swift_Message('Email Through Swift Mailer'))
-            ->setFrom(['FROM_EMAIL_ADDRESS' => 'FROM_NAME'])
+        $message = (new \Swift_Message(('Email Through Swift Mailer')))
+            ->setFrom(['aziz13mth@gmail.com' => 'KindoGarten'])
             ->setTo(['mohamedaziz.mathlouthi@esprit.tn'])
             ->setBody($body)
-            ->setContentType('text/html')
-        ;
+            ->setContentType('text/html');
 
 // Send the message
         $mailer->send($message);
+        return $this->redirectToRoute('transport_homepage');
     }
-
 }
