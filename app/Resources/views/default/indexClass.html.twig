@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block afterheader %}
+
+    <div class="grid_row clearfix">
+        <div class="grid_col grid_col_12">
+            <div class="ce clearfix">
+                <div>
+                    <h3 class="ce_title" style="text-align: center;">KINDO KINDERGATREN <span>Classes</span></h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid_row clearfix">
+        <div class="grid_col grid_col_3">
+        </div>
+        {% for classe in classes %}
+        <div class="grid_col grid_col_3">
+
+            <div class="ce clearfix">
+                <div>
+                    <div class="cws_fa_tbl">
+                        <div class="cws_fa_tbl_row">
+                            <div class="cws_fa_tbl_cell size_1x">
+                                <div class="cws_fa_wrapper round"><i class="cws_fa fa fa-1x fa-book"></i><span class="ring"></span></div>
+                            </div>
+                            <div class="cws_fa_tbl_cell">
+                                <strong> {{ classe.name }}</strong></div>
+                        </div>
+                        <div class="cws_fa_tbl_row">
+                            <div class="cws_fa_tbl_cell"></div>
+                            <div class="cws_fa_tbl_cell">
+                                <h3 class="cws_blog_header"> Responsible Teacher :
+
+                                 {{ classe.idteacher.username}}</h3>  <BR>
+                               Level :
+
+                                {{ classe.level }}   <BR>
+                               Number Of Children :
+
+                               {{ classe.nbChild }} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    {% endfor %}
+    </div>
+{% endblock %}
+

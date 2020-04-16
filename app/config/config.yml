@@ -5,6 +5,8 @@ imports:
     - { resource: "@TransportBundle/Resources/config/services.yml" }
     - { resource: "@FirstBundle/Resources/config/services.yml" }
     - { resource: "@EventBundle/Resources/config/services.yml" }
+    - { resource: "@ActivityBundle/Resources/config/services.yml" }
+    - { resource: "@ClassBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -42,6 +44,7 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    form_themes: ['bootstrap_3_layout.html.twig']
 
 # Doctrine Configuration
 doctrine:

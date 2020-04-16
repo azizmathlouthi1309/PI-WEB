@@ -1,0 +1,39 @@
+{% extends 'admin1.html.twig' %}
+
+{% block afterheader %}
+
+    <div class="card" xmlns="http://www.w3.org/1999/html">
+        <div class="card-header">
+            <h2>Class Details</h2>
+
+        </div>
+        <div class="card-body">
+            <label>Class Name</label> <br>
+            <p class=card-text">       {{ classe.name }}</p>
+            <label>Teacher</label>
+
+            <p class="card-text">  {{ classe.idteacher.username}}</p>
+            <label>Level</label> <br>
+            <p class=card-text"> {{ classe.level }}</p>
+            <label>Number Of Children </label> <br>
+            <p class=card-text"> {{ classe.nbChild }}</p>
+            <div class="row">
+                <div class="col-md-3">
+
+                    <div class="card-body">
+                        <a class="btn btn-light " href="{{ path('classe_edit', { 'id': classe.id }) }}">
+                            <i class="fas fa-edit">
+                            </i>
+                            Update
+                        </a> <br>
+                        {{ form_start(delete_form) }}
+                        <button type="submit" class="btn btn-danger"> <i class="fas fa-trash">
+                            </i>  Delete</button>
+                        {{ form_end(delete_form) }} <br>
+                        <a class="btn  bg-gradient-warning btn-sm" href="{{ path('classe_index') }}">Back to the list</a>
+                    </div></div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

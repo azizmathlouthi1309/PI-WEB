@@ -1,3 +1,7 @@
+activity:
+    resource: "@ActivityBundle/Resources/config/routing.yml"
+    prefix:   /activity
+
 event:
     resource: "@EventBundle/Resources/config/routing.yml"
     prefix:   /event
@@ -18,3 +22,26 @@ first:
 transport:
     resource: "@TransportBundle/Resources/config/routing.yml"
     prefix:   /
+
+activity_timetable:
+    resource: "@ActivityBundle/Resources/config/routing/timetable.yml"
+    prefix:   /timetable
+
+
+my_homepage:
+    path:     /
+    defaults: { _controller: ActivityBundle:Default:indexAct}
+
+activity_page:
+    path:     /act
+    defaults: { _controller: ActivityBundle:Default:indexAct}
+    methods: GET
+
+class:
+    resource: "@ClassBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+
+toiba_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yaml"

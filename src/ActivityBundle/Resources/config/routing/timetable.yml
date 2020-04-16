@@ -1,0 +1,25 @@
+timetable_index:
+    path:     /
+    defaults: { _controller: "ActivityBundle:TimeTable:index" }
+    methods:  GET
+
+timetable_show:
+    path:     /{id}/show
+    defaults: { _controller: "ActivityBundle:TimeTable:show" }
+    methods:  GET
+
+timetable_new:
+    path:     /new
+    defaults: { _controller: "ActivityBundle:TimeTable:new" }
+    methods:  [GET, POST]
+
+timetable_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ActivityBundle:TimeTable:edit" }
+    methods:  [GET, POST]
+
+timetable_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ActivityBundle:TimeTable:delete" }
+    methods:  DELETE
+

@@ -1,0 +1,51 @@
+{% extends 'admin1.html.twig' %}
+
+
+{% block afterheader %}
+    <div class="col-md-8">
+        <a class="btn btn-info gray"  href="{{ path('pdf_timetable')}}">
+
+            Generate PDF
+        </a>
+    </div>
+    {% include '@FullCalendar/Calendar/calendar.html.twig' %}
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function() {
+            $("#calendar-holder").fullCalendar({
+                eventSources: [
+                    {
+                        url: "/fc-load-events",
+                        type: "POST",
+                        data: {
+                            filters: {},
+                        },
+                        error: function () {
+                            alert("There was an error while fetching FullCalendar!");
+                        }
+                    }
+                ],
+                header: {
+                    center: "title",
+                    left: "prev,next today",
+                    right: "month,agendaWeek,agendaDay"
+                },
+                lazyFetching: true,
+                locale: "fr",
+                navLinks: true, // can click day/week names to navigate views
+            });
+        });
+
+    </script>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="https://momentjs.com/downloads/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.js"></script>
+
+    {# <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/locale-all.js"></script> #}
+{% endblock %}

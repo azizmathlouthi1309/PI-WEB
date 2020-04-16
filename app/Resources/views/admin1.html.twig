@@ -27,7 +27,12 @@
         <link rel="stylesheet" href="{{ asset('admin1/plugins/summernote/summernote-bs4.css') }}">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.0/fullcalendar.min.css">
     {% endblock head %}
+
+    {% block stylesheets %}
+    {% endblock stylesheets %}
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 {% block body %}
@@ -101,6 +106,14 @@
                             </ul>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
+                                    <a href="{{ path('classe_index' )}}" class="nav-link">
+                                        <i class="nav-icon far fa-image"></i>
+                                        <p>
+                                            Classes
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{ path('transport_back_driver') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Drivers Management</p>
@@ -113,9 +126,32 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
+                                    <a href="{{path('transport_back_vehicule_homepage_show')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Vehicules Management</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
                                     <a href="{{ path('transport_back_affect') }}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Affectation Center</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('activity_index' )}}" class="nav-link">
+                                        <i class="nav-icon far fa-image"></i>
+                                        <p>
+                                            Activities
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ path('activity_calendar')}}" class="nav-link">
+                                        <i class="nav-icon far fa-calendar-alt"></i>
+                                        <p>
+                                            Calendar
+                                            <span class="badge badge-info right">2</span>
+                                        </p>
                                     </a>
                                 </li>
                             </ul>
@@ -174,40 +210,29 @@
 
     <!-- jQuery -->
 {% block java %}
-    <script src="{{ asset('admin1/') }}plugins/jquery/jquery.min.js"></script>
+    <script src="{{ asset('admin1/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="{{ asset('admin1/') }}plugins/jquery-ui/jquery-ui.min.js"></script>
+    <script src="{{ asset('admin1/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
     </script>
     <!-- Bootstrap 4 -->
-    <script src="{{ asset('admin1/') }}plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('admin1/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- ChartJS -->
-    <script src="{{ asset('admin1/') }}plugins/chart.js/Chart.min.js"></script>
-    <!-- Sparkline -->
-    <script src="{{ asset('admin1/') }}plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="{{ asset('admin1/') }}plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="{{ asset('admin1/') }}plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="{{ asset('admin1/') }}plugins/jquery-knob/jquery.knob.min.js"></script>
-    <!-- daterangepicker -->
-    <script src="{{ asset('admin1/') }}plugins/moment/moment.min.js"></script>
-    <script src="{{ asset('admin1/') }}plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="{{ asset('admin1/') }}plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Summernote -->
-    <script src="{{ asset('admin1/') }}plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="{{ asset('admin1/') }}plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="{{ asset('admin1/plugins/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ asset('admin1/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
-    <script src="{{ asset('admin1/') }}dist/js/adminlte.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ asset('admin1/') }}dist/js/pages/dashboard.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{ asset('admin1/') }}dist/js/demo.js"></script>
+    <script src="{{ asset('admin1/dist/js/adminlte.min.js') }}"></script>
+
 {% endblock java %}
+
+
 {% endblock body %}
+{% block javascripts %}
+{% endblock javascripts %}
 </body>
 </html>

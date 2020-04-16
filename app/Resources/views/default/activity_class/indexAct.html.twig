@@ -1,0 +1,131 @@
+
+{% extends 'base.html.twig' %}
+{% block body %}
+    <!DOCTYPE html>
+    <html lang="en">
+<head>
+    <!-- //js -->
+
+</head>
+<body>
+    <section class="page_title wave">
+        <div class="container">
+            <div class="title">
+                <h1>My Activities</h1></div>
+            <nav class="bread-crumbs"><a href="index-2.html">Home</a><i class="delimiter fa fa-chevron-right"></i><span class="current">Activities</span></nav>
+            <!-- .breadcrumbs -->
+        </div>
+        <canvas class="breadcrumbs" data-bg-color="#f8f2dc" data-line-color="#f9e8b2" height="71" width="998" style="height: 71px; width: 998px;"></canvas>
+    </section>
+    <div id="main" class="site-main">
+
+    <div class="container">
+
+    <div class="grid_row">
+    <section class="news news-small">
+    <div class="cws_wrapper">
+    <div class="grid">
+
+    {% for activity in activities %}
+
+    <article class="item small">
+
+        <div class="post_header_def_post">
+
+            <div class="date">
+                <div class="date-cont"><span class="day"></span><i class="springs"></i></div>
+            </div>
+            <div class="post_info_header">
+                <h3 class="ce_title"><a href="blog-post.html">{{ activity.name}}</a></h3> </div>
+        </div>
+
+        <div class="media_info_wrapper">
+            <div class="media_part">
+                <div class="pic"><img src="{{ asset('images/')}}{{ activity.path }}" data-at2x="pic/bfi_thumb/348x195-Full-HD-3-304vqid57d4xo7xnjd51je@2x.jpg" alt="">
+                    <div class="hover-effect"></div>
+                    <div class="links_popup animate">
+                        <div class="link_cont">
+                            <div class="link" style="transform: rotate(90deg);">
+                                <a class="fancy" href="pic/2015/03/Full-HD-3.jpg" style="transform: translate3d(0px, 0px, 0px);"><i class="fa fa-camera" style="transform: rotate(-90deg);"></i></a>
+                                <div class="link-item-bounce" style="transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"></div>
+                            </div>
+                            <div class="link" style="transform: rotate(270deg);">
+                                <a href="blog-post.html" style="transform: translate3d(0px, 0px, 0px);"><i class="fa fa-share" style="transform: rotate(-270deg);"></i></a>
+                                <div class="link-item-bounce" style="transform: translate3d(0px, 0px, 0px); transform-origin: 50% 50% 0px;"></div>
+                            </div>
+                        </div>
+                        <div class="link-toggle-button">
+                            <i class="fa fa-plus link-toggle-icon" style="transform: translate3d(0px, 0px, 0px);"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="post_content_wrap">
+            <div class="post_content">
+                <p>{{ activity.description }}</p>
+
+            </div>
+            <div class="meta_cont_wrapper">
+                <div class="meta_cont">
+                    <div class="post_info">
+                        <div class="post_categories"><i class="fa fa-bookmark"></i><a href="#" rel="category tag">Standart</a><span class="v_sep"></span><a href="#" rel="category tag">Uncategorized</a></div>
+                    </div>
+                    <div class="button_cont">
+
+                        <a  data-toggle="modal" data-target="#{{ activity.id }}" href="#{{ activity.id }}"> Interested In </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="separator-box">
+            <canvas class="separator" width="749" data-line-color="#f9e8b2" height="22" style="height: 22px; width: 749px;"></canvas>
+        </div>
+
+
+    </article>
+    {% endfor %}
+
+        <script >
+
+
+            (function($){
+
+                var cID = this.value ;
+                var act = this.name ;
+
+                    $.ajax({
+                        url:'{{( path('activity_page') )}}',
+                        type: "POST",
+                        dataType: "json",
+                        data: {
+                            "some_var_name": "some_var_value" ,
+                            "cID" : cID ,
+                            "act" :act ,
+                        },
+                        async: true,
+                        success: function (data)
+                        {
+                            console.log(data);
+                            //alert(data);
+                        }
+                    });
+
+            }(jQuery));
+
+        </script>
+
+
+
+
+
+    </div>
+    </div>
+    </section>
+    </div>
+
+    </div>
+    </div>
+</body>
+</html>
+{% endblock %}

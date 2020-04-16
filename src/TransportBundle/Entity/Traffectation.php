@@ -23,7 +23,7 @@ class Traffectation
 
     /**
      * @var int
-     * @ORM\ManyToOne(targetEntity="FirstBundle\Entity\Classe")
+     * @ORM\ManyToOne(targetEntity="ClassBundle\Entity\Classe")
      * @ORM\JoinColumn(name="grade",referencedColumnName="id")
      *
      */
@@ -85,11 +85,11 @@ class Traffectation
 
     /**
      * Set grade
-     * @param \FirstBundle\Entity\Classe $grade
+     * @param \ClassBundle\Entity\Classe $grade
      *
      * @return Traffectation
      */
-    public function setGrade(\FirstBundle\Entity\Classe $grade = null)
+    public function setGrade(\ClassBundle\Entity\Classe $grade = null)
     {
         $this->grade = $grade;
 
@@ -99,7 +99,7 @@ class Traffectation
     /**
      * Get grade
      *
-     * @return \FirstBundle\Entity\Classe
+     * @return \ClassBundle\Entity\Classe
      */
     public function getGrade()
     {

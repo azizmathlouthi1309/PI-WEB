@@ -1,0 +1,29 @@
+activity_activity:
+    resource: "@ActivityBundle/Resources/config/routing/activity.yml"
+    prefix:   /activity
+
+
+activity_timetable:
+    resource: "@ActivityBundle/Resources/config/routing/timetable.yml"
+    prefix:   /timetable
+
+
+my_homepage:
+    path:     /
+    defaults: { _controller: ActivityBundle:Default:indexAct}
+
+activity_page:
+    path:     /act
+    defaults: { _controller: ActivityBundle:Default:indexAct}
+    methods:  [GET, POST]
+
+
+class_page:
+    path:     /class
+    defaults: { _controller: ClassBundle:Default:indexClass}
+    methods: GET
+
+pdf_timetable:
+    path:     /pdf
+    defaults: { _controller: "ActivityBundle:Activity:generatePDF" }
+    methods:  GET

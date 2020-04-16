@@ -3,7 +3,7 @@
 namespace TransportBundle\Controller;
 
 use ClassesWithParents\D;
-use FirstBundle\Entity\Classe;
+use ClassBundle\Entity\Classe;
 use FirstBundle\Repository\ClasseRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -307,7 +307,7 @@ class DefaultController extends Controller
             ->add('vehicule', EntityType::class, array('class' => 'TransportBundle:Vehicule',
                 'choice_label' => 'brand',
                 'multiple' => false))
-            ->add('grade', EntityType::class, array('class' => 'FirstBundle:Classe',
+            ->add('grade', EntityType::class, array('class' => 'ClassBundle:Classe',
                 'choice_label' => 'name',
                 'multiple' => false))
             ->add('Add', SubmitType::class, ['label' => 'Confirm Affectation'])

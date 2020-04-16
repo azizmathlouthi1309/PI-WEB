@@ -22,6 +22,9 @@ class AppKernel extends Kernel
             new FirstBundle\FirstBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new EventBundle\EventBundle(),
+            new Toiba\FullCalendarBundle\FullCalendarBundle(),
+            new ActivityBundle\ActivityBundle(),
+            new ClassBundle\ClassBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

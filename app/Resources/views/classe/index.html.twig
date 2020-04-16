@@ -1,0 +1,137 @@
+{% extends 'admin1.html.twig' %}
+
+{% block afterheader %}
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-10">
+                    <h1>Kindo Classes</h1>
+                </div>
+                <div class="col-sm-2">
+
+                    <a type="button"  href="{{ path('classe_new') }} " class="btn  btn-success">Add New Class</a>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <form method="post">
+                    <div class="box-header with-border">
+
+
+                        <div class="box-tools pull-right">
+                            <div class="has-feedback">
+                                <input type="text"  name="name" class="form-control input-sm" placeholder="Search..." id="myInput">
+
+                            </div>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+
+
+                    <!------ Include the above in your HEAD tag ---------->
+                    <script language="JavaScript" src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+                    <script language="JavaScript" src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js" type="text/javascript"></script>
+                    <script language="JavaScript" src="https://cdn.datatables.net/plug-ins/3cfcc339e89/integration/bootstrap/3/dataTables.bootstrap.js" type="text/javascript"></script>
+                    <script>
+                        $(document).ready(function(){
+                            $("#myInput").on("keyup", function() {
+                                var value = $(this).val().toLowerCase();
+                                $("#myTable tr").filter(function() {
+                                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                });
+                            });
+                        });
+                    </script>
+
+                <table  id="myTable" class="table table-striped projects">
+
+                    <thead>
+                    <tr>
+
+                        <th style="width: 20%">
+                            Class Name
+                        </th>
+                        <th style="width: 20%">
+                            Teacher Name
+                        </th>
+                        <th style="width: 20%">
+                            Number of Children
+                        </th>
+                        <th style="width: 15%">
+                            Level
+                        </th>
+
+
+
+                    </tr>
+                    </thead>
+                    {% for classe in classes %}
+                    <tbody>
+                    <tr>
+                        <td>
+                            <a href="{{ path('classe_show', { 'id': classe.id }) }}" > {{ classe.name }}</a>
+                        </td>
+                        <td>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    {{ classe.idteacher.username}}
+
+                            </ul>
+                        </td>
+                        <td>
+                            <a>
+                                {{ classe.nbChild }}
+
+                            </a>
+                            <br>
+
+                        </td>
+                        <td>
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    {{ classe.level }}
+
+                            </ul>
+                        </td>
+
+
+                        <td class="project-actions text-right">
+
+                            <a class="btn btn-info " href="{{ path('classe_show', { 'id': classe.id }) }}">
+                                <i class="fas fa-pencil-alt">
+                                </i>
+                                Details
+                            </a>
+                            <a> </a>
+                            <br>
+                            <a class="btn btn-light " href="{{ path('classe_edit', { 'id': classe.id }) }}">
+                                <i class="fas fa-edit">
+                                </i>
+                                Update
+                            </a>
+
+                        </td>
+                    </tr>
+
+
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </section>
+    <!-- /.content -->
+    </div>
+
+{% endblock %}
