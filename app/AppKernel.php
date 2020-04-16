@@ -25,6 +25,7 @@ class AppKernel extends Kernel
             new Toiba\FullCalendarBundle\FullCalendarBundle(),
             new ActivityBundle\ActivityBundle(),
             new ClassBundle\ClassBundle(),
+            new RestoNurseryBundle\RestoNurseryBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

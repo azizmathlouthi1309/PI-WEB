@@ -1,0 +1,4 @@
+services:
+#    resto_nursery.example:
+#        class: RestoNurseryBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

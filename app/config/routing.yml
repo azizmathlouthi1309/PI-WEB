@@ -1,3 +1,11 @@
+#first:
+  #  resource: "@FirstBundle/Resources/config/routing.yml"
+    #prefix:   /
+
+app:
+    resource: '@AppBundle/routing.yml'
+    prefix:   /
+
 activity:
     resource: "@ActivityBundle/Resources/config/routing.yml"
     prefix:   /activity
@@ -8,16 +16,11 @@ event:
 
 
 
-app:
-    resource: '@AppBundle/routing.yml'
 
 # app/config/routing.yml
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-first:
-    resource: "@FirstBundle/Resources/config/routing.yml"
-    prefix:   /
 
 transport:
     resource: "@TransportBundle/Resources/config/routing.yml"
@@ -45,3 +48,15 @@ class:
 
 toiba_fullcalendar:
     resource: "@FullCalendarBundle/Resources/config/routing.yaml"
+
+
+menu_indexF:
+    path:       /indexF
+    defaults:   {_controller: RestoNurseryBundle:Menu:indexF}
+
+menu_indexB:
+    path:       /indexB
+    defaults:   {_controller: RestoNurseryBundle:Default:indexB}
+
+restonursery_restonursery:
+    resource: "@RestoNurseryBundle/Resources/config/myrouting.yml"

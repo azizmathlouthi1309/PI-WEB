@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block afterheader %}
+
+    <h1>Menus list</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Date day</th>
+            <th>Plate1</th>
+            <th>Plate2</th>
+            <th>Plate3</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for menu in menus %}
+            <tr>
+
+                <td>{{ menu.dateDay }}</td>
+                <td>{{ menu.plate1 }}</td>
+                <td>{{ menu.plate2 }}</td>
+                <td>{{ menu.plate3 }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock afterheader %}

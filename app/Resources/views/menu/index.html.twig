@@ -1,0 +1,49 @@
+
+{% extends 'admin1.html.twig' %}
+{% block afterheader %}
+
+    <h1>Menus list</h1>
+
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Dateday</th>
+                <th>Plate1</th>
+                <th>Plate2</th>
+                <th>Plate3</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        {% for menu in menus %}
+            <tr>
+                <td><a href="{{ path('menu_show', { 'id': menu.id }) }}">{{ menu.id }}</a></td>
+                <td>{{ menu.dateDay }}</td>
+                <td>{{ menu.plate1 }}</td>
+                <td>{{ menu.plate2 }}</td>
+                <td>{{ menu.plate3 }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('menu_show', { 'id': menu.id }) }}" class="btn btn-primary">show</a>
+                        </li>
+                        <Br>
+                        <li>
+                            <a href="{{ path('menu_edit', { 'id': menu.id }) }}" class="btn btn-primary">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('menu_new') }}">Create a new menu</a>
+        </li>
+    </ul>
+{% endblock afterheader %}

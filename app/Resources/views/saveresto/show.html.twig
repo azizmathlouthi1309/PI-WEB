@@ -1,0 +1,36 @@
+{% extends 'admin1.html.twig' %}
+
+{% block afterheader %}
+    <h1>Saveresto</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ saveResto.id }}</td>
+            </tr>
+            <tr>
+                <th>Datebegin</th>
+                <td>{{ saveResto.dateBegin }}</td>
+            </tr>
+            <tr>
+                <th>Dateend</th>
+                <td>{{ saveResto.dateEnd }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('saveresto_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('saveresto_edit', { 'id': saveResto.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -156,6 +156,44 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-copy"></i>
+                                <p>
+                                    Restauration Management
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href={{ path('menu_index') }} class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Menus Management</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href={{ path('saveresto_index') }} class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Subscriptions Managements</p>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href={{ path('savenurse_index') }} class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Nursery Management
+                                    <span class="right badge badge-danger"></span>
+                                </p>
+                            </a>
+                        </li>
+
                         <li class="nav-item">
                             <a href="{{path('fos_user_security_logout')}}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>

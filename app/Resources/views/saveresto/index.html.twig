@@ -1,0 +1,46 @@
+{% extends 'admin1.html.twig' %}
+
+{% block afterheader %}
+    <h1>Restauration's subscriptions' list</h1>
+
+    <table id="example2" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datebegin</th>
+                <th>Dateend</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for saveResto in saveRestos %}
+            <tr>
+                <td><a href="{{ path('saveresto_show', { 'id': saveResto.id }) }}">{{ saveResto.id }}</a></td>
+                <td>{{ saveResto.dateBegin }}</td>
+                <td>{{ saveResto.dateEnd }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('saveresto_show', { 'id': saveResto.id }) }}" class="btn btn-primary">show</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="{{ path('saveresto_edit', { 'id': saveResto.id }) }}" class="btn btn-primary">edit</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="" class="btn btn-primary">Validate</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('saveresto_new') }}">Create a new saveResto</a>
+        </li>
+    </ul>
+{% endblock %}

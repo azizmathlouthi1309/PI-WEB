@@ -1,0 +1,78 @@
+menu_index:
+  path:     /menu
+  defaults: { _controller: "RestoNurseryBundle:Menu:index" }
+  methods:  GET
+
+menu_show:
+  path:     /{id}/showm
+  defaults: { _controller: "RestoNurseryBundle:Menu:show" }
+  methods:  GET
+
+menu_new:
+  path:     /newm
+  defaults: { _controller: "RestoNurseryBundle:Menu:new" }
+  methods:  [GET, POST]
+
+menu_edit:
+  path:     /{id}/editm
+  defaults: { _controller: "RestoNurseryBundle:Menu:edit" }
+  methods:  [GET, POST]
+
+menu_delete:
+  path:     /{id}/deletem
+  defaults: { _controller: "RestoNurseryBundle:Menu:delete" }
+  methods:  DELETE
+
+##########
+
+saveresto_index:
+  path:     /subsr
+  defaults: { _controller: "RestoNurseryBundle:SaveResto:index" }
+  methods:  GET
+
+saveresto_show:
+  path:     /{id}/showr
+  defaults: { _controller: "RestoNurseryBundle:SaveResto:show" }
+  methods:  GET
+
+saveresto_new:
+  path:     /newr
+  defaults: { _controller: "RestoNurseryBundle:SaveResto:new" }
+  methods:  [GET, POST]
+
+saveresto_edit:
+  path:     /{id}/editr
+  defaults: { _controller: "RestoNurseryBundle:SaveResto:edit" }
+  methods:  [GET, POST]
+
+saveresto_delete:
+  path:     /{id}/deleter
+  defaults: { _controller: "RestoNurseryBundle:SaveResto:delete" }
+  methods:  DELETE
+
+##############
+
+savenurse_index:
+  path:     /subsn
+  defaults: { _controller: "RestoNurseryBundle:SaveNurse:index" }
+  methods:  GET
+
+savenurse_show:
+  path:     /{id}/shown
+  defaults: { _controller: "RestoNurseryBundle:SaveNurse:show" }
+  methods:  GET
+
+savenurse_new:
+  path:     /newn
+  defaults: { _controller: "RestoNurseryBundle:SaveNurse:new" }
+  methods:  [GET, POST]
+
+savenurse_edit:
+  path:     /{id}/editn
+  defaults: { _controller: "RestoNurseryBundle:SaveNurse:edit" }
+  methods:  [GET, POST]
+
+savenurse_delete:
+  path:     /{id}/deleten
+  defaults: { _controller: "RestoNurseryBundle:SaveNurse:delete" }
+  methods:  DELETE

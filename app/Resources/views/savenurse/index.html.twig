@@ -1,0 +1,47 @@
+{% extends 'admin1.html.twig' %}
+
+{% block afterheader %}
+    <h1>Nursery's subscriptions list</h1>
+
+    <table id="example1" class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Datebegin</th>
+                <th>Dateend</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for saveNurse in saveNurses %}
+            <tr>
+                <td><a href="{{ path('savenurse_show', { 'id': saveNurse.id }) }}">{{ saveNurse.id }} </a></td>
+                <td>{{ saveNurse.dateBegin }}</td>
+                <td>{{ saveNurse.dateEnd }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('savenurse_show', { 'id': saveNurse.id }) }}" class="btn btn-primary">show</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="{{ path('savenurse_edit', { 'id': saveNurse.id }) }}" class="btn btn-primary">edit</a>
+                        </li>
+                        <br>
+                        <li>
+                            <a href="" class="btn btn-primary">Validate</a>
+                        </li>
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('savenurse_new') }}">Create a new saveNurse</a>
+        </li>
+    </ul>
+{% endblock %}

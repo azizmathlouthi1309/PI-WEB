@@ -84,6 +84,171 @@ class Child
      */
     private $photo;
 
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastname()
+    {
+        return $this->lastname;
+    }
+
+    /**
+     * @param string $lastname
+     */
+    public function setLastname($lastname)
+    {
+        $this->lastname = $lastname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFirstname()
+    {
+        return $this->firstname;
+    }
+
+    /**
+     * @param string $firstname
+     */
+    public function setFirstname($firstname)
+    {
+        $this->firstname = $firstname;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * @param string $level
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    }
+
+    /**
+     * @return int
+     */
+    public function getParentId()
+    {
+        return $this->parentId;
+    }
+
+    /**
+     * @param int $parentId
+     */
+    public function setParentId($parentId)
+    {
+        $this->parentId = $parentId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getClassId()
+    {
+        return $this->classId;
+    }
+
+    /**
+     * @param int $classId
+     */
+    public function setClassId($classId)
+    {
+        $this->classId = $classId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSaveNursId()
+    {
+        return $this->saveNursId;
+    }
+
+    /**
+     * @param int $saveNursId
+     */
+    public function setSaveNursId($saveNursId)
+    {
+        $this->saveNursId = $saveNursId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSaveRestoId()
+    {
+        return $this->saveRestoId;
+    }
+
+    /**
+     * @param int $saveRestoId
+     */
+    public function setSaveRestoId($saveRestoId)
+    {
+        $this->saveRestoId = $saveRestoId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAge()
+    {
+        return $this->age;
+    }
+
+    /**
+     * @param int $age
+     */
+    public function setAge($age)
+    {
+        $this->age = $age;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhoto()
+    {
+        return $this->photo;
+    }
+
+    /**
+     * @param string $photo
+     */
+    public function setPhoto($photo)
+    {
+        $this->photo = $photo;
+    }
+
+    public function __toString()
+    {
+return $this->firstname;
+    }
+
 
 }
 

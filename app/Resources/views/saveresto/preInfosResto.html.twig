@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block afterheader %}
+    <br>
+    <br>
+    <br>
+    <h1 align="middle">Restauration services</h1>
+    <p align="middle">Please enter your child's ID !</p>
+    {{ form_start(search_form) }}
+
+    <input type="text" name="idc" id="idc" >
+    <input type="submit" value="OK">
+    {{ form_start(search_form) }}
+
+    <p onclick="">Not subscribed ? Subscribe your child HERE</p>
+
+{% endblock afterheader %}
+{% block footer %}
+{% endblock footer %}
