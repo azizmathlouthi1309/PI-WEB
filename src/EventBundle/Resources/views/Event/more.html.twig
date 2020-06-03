@@ -2,8 +2,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="shortcut icon" href="{{ asset('images/KINDO.png') }}" />
-        <title>KINDO</title>
+        <link rel="shortcut icon" href="{{ asset('logo.png') }}" />
+        <title>kindo</title>
         {% block stylesheet %}
 
             <link rel='stylesheet' href="{{ asset('revslider/css/settings.css') }}" type='text/css' media='all' />
@@ -51,7 +51,7 @@
                         <div class="mobile_menu_header">
                             <i class="mobile_menu_switcher"><span></span><span></span><span></span></i>
                         </div>
-                        <ul style="position: center;id="menu-main-menu" class="main-menu menu-bees">
+                        <ul style="position: center;"id="menu-main-menu" class="main-menu menu-bees">
                         <!-- menu item -->
                         <li class="menu-item current-menu-item page_item current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children bees-start">
                             <a href="#">
@@ -245,6 +245,16 @@
 
                                                     </div>
                                                 </div>
+                                         <!--   <div class='meta_cont_wrapper'>
+                                                <div class='meta_cont'>
+                                                    <form method="post" class="cf-form contact-form" novalidate="novalidate">
+                                                        <span><a href='{{ path('forum_readF',{'id':id}) }}'></a></span>
+                                                       {{ forums.getUser().getUsername()}} {{ forums.message}}
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                            -->
                                           {% for f in forums %}
                                             <div class="media mb-4">
                                                 <div class="media-body">

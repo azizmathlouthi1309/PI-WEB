@@ -46,3 +46,12 @@ parti_add:
 parti_read:
     path:     /readdd
     defaults: { _controller: EventBundle:Event:readPar }
+event_like:
+    path:     /like/{id}
+    defaults: { _controller: EventBundle:Event:like}
+event_dislike:
+    path:     /dislike/{id}
+    defaults: { _controller: EventBundle:Event:dislike}
+forum_readF:
+    path:     /forumF/{id}
+    defaults: { _controller: EventBundle:Event:forumF}

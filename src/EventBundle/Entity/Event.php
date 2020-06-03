@@ -89,7 +89,7 @@ class Event
 
     /**
      * @var string
-     * @Assert\NotBlank(message="dakhil il image yar7em weldikk")
+     * @Assert\NotBlank(message="insert picture plzz")
      * @Assert\Image()
      * @ORM\Column(name="picture", type="string", length=255)
      */
@@ -101,7 +101,18 @@ class Event
     {
         return $this->forums;
     }
-
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbre", type="integer", nullable=true)
+     */
+    private $nbre;
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="nbreN", type="integer", nullable=true)
+     */
+    private $nbreN;
     /**
      * @param mixed $forums
      */
@@ -358,6 +369,36 @@ return $this->getUploadRoot().$this->picture;
         #$this->file = null;
 
     }
+    /**
+     * @return int
+     */
+    public function getNbre()
+    {
+        return $this->nbre;
+    }
 
+    /**
+     * @param int $nbre
+     */
+    public function setNbre($nbre)
+    {
+        $this->nbre = $nbre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNbreN()
+    {
+        return $this->nbreN;
+    }
+
+    /**
+     * @param mixed $nbreN
+     */
+    public function setNbreN($nbreN)
+    {
+        $this->nbreN = $nbreN;
+    }
 }
 

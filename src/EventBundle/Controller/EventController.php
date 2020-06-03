@@ -4,6 +4,7 @@ namespace EventBundle\Controller;
 
 use EventBundle\Entity\Event;
 use EventBundle\Entity\Forum;
+use EventBundle\Entity\Likes;
 use EventBundle\Entity\Participation;
 use EventBundle\Form\EventType;
 use EventBundle\Form\ForumType;
@@ -56,7 +57,7 @@ class EventController extends Controller
         $result = $paginator->paginate(
             $events,
             $request->query->getInt('page', 1),
-            $request->query->getInt('limit', 5)
+            $request->query->getInt('limit', 4)
         );
 
         return $this->render('@Event/Event/read.html.twig', array('events' => $result,));
@@ -124,36 +125,11 @@ class EventController extends Controller
         $result = $paginator->paginate(
             $events,
             $request->query->getInt('page', 1),
-            $request->query->getInt('limit', 5)
+            $request->query->getInt('limit', 4)
         );
 
         return $this->render('@Event/Event/read.html.twig', array('events' => $result));
 
-    }
-
-    public function searchAjaxAction(Request $request)
-    {
-
-        $em = $this->getDoctrine()->getManager();
-        $requestString = $request->get('q');
-        $events = $em->getRepository('EventBundle:Event')->findEntitiesByString($requestString);
-        if (!$events) {
-            $result['events']['error'] = "Post Not found;(";
-        } else {
-            $result['events'] = $this->getRealEntities($events);
-
-            return new Response(json_encode($result));
-            # return $this->render('@Event/Event/read.html.twig',array('events'=>$results));
-        }
-    }
-
-    public function getRealEntities($events)
-    {
-        foreach ($events as $events) {
-            $realEntities[$events->getId()] = [$events->getName(), $events->getdesciption(), $events->getDate(), $events->getHourBegin(), $events->getHourEnd(), $events->getCapacity(), $events->getPicture()];
-
-        }
-        return $realEntities;
     }
 
     public function readFAction(Request $request)
@@ -179,7 +155,7 @@ class EventController extends Controller
         $result = $paginator->paginate(
             $forums,
             $request->query->getInt('page', 1),
-            $request->query->getInt('limit', 5)
+            $request->query->getInt('limit', 4)
         );
 
         return $this->render('@Event/Forum/forum.html.twig', array('forums' => $result,));
@@ -203,32 +179,10 @@ class EventController extends Controller
         ));
     }
 
-    public function addForumAction(Request $request, UserInterface $user,$id )
-    {
-        $ref = $request->headers->get('referer');
-        #$event= $this->getDoctrine()->getRepository(Event::class)->findById($this->$request->get('event_id'));
-        $event = $this->getDoctrine()->getRepository('EventBundle:Event')->find($id);
-        $forum = new Forum();
 
-        $forum->setUser($user);
-        $forum->setEvent($event);
-        $forum->setMessage($request->get('message'));
-        #$forum->setMessage($request->request->get('message'));
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($forum);
-        $em->flush();
-
-        #$this->addFlash('info', 'Comment published !.');
-
-        return $this->redirect($ref);
-    }
     public function deleteForumAction($id)
     {
-       # $id = $request->get('id');
-        #$em= $this->getDoctrine()->getManager();
-        #$forum=$em->getRepository('EventBundle:Forum')->find($id);
-        #$em->remove($forum);
-        #$em->flush();
+
         $em = $this->getDoctrine()->getManager();
         $forum = $em->find('EventBundle:Forum', $id);
 
@@ -251,9 +205,8 @@ class EventController extends Controller
 
     public function ParticipationAction(Request $request, UserInterface $user,$id)
     {
-        $message = "";
+
         $ref = $request->headers->get('referer');
-        #$event= $this->getDoctrine()->getRepository(Event::class)->findById($this->$request->get('event_id'));
         $event = $this->getDoctrine()->getRepository('EventBundle:Event')->find($id);
         $event->setCapacity($event->getCapacity() - 1);
 
@@ -263,7 +216,6 @@ class EventController extends Controller
         $par->setEvent($event);
         $em = $this->getDoctrine()->getManager();
         $em->persist($par);
-        $message="participate";
         $em->flush();
 
         return $this->redirect($ref);
@@ -295,10 +247,81 @@ class EventController extends Controller
         $result = $paginator->paginate(
             $participations,
             $request->query->getInt('page', 1),
-            $request->query->getInt('limit', 5)
+            $request->query->getInt('limit', 4)
         );
 
         return $this->render('@Event/Parti/parti.html.twig', array('participations' => $result,));
     }
+    public function addForumAction(Request $request, UserInterface $user,$id )
+    {
+        $ref = $request->headers->get('referer');
+        #$event= $this->getDoctrine()->getRepository(Event::class)->findById($this->$request->get('event_id'));
+        $event = $this->getDoctrine()->getRepository('EventBundle:Event')->find($id);
+        $forum = new Forum();
 
+        $forum->setUser($user);
+        $forum->setEvent($event);
+        $forum->setMessage($request->get('message'));
+        #$forum->setMessage($request->request->get('message'));
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($forum);
+        $em->flush();
+
+        #$this->addFlash('info', 'Comment published !.');
+
+        return $this->redirect($ref);
+
+    }
+    public function forumFAction(Request $request,$id)
+    {
+        $ref = $request->headers->get('referer');
+        $em = $this->getDoctrine()->getManager();
+        $event = $em->getRepository(Event::class)->findby($id);
+        if($event)
+        {
+            $forum = $em->getRepository(Forum::class)->findAll();
+            return $this->redirect($ref, array('forums' => $forum,));
+        }
+
+
+    }
+    public function likeAction($id, UserInterface $user,Request $request)
+    {
+        $ref = $request->headers->get('referer');
+        $em = $this->getDoctrine()->getManager();
+        $event = $em->getRepository('EventBundle:Event')->find($id);
+        $like = $em->getRepository('EventBundle:Likes')->findOneBy(array('eventId' => $id, 'parentId' => $user->getId()));
+
+        if ($event && !$like) {
+            $like = new Likes();
+            $like->setEventId($event);
+            $like->setParentId($user);
+            $em->persist($like);
+            $em->flush();
+
+            $event->setNbre($event->getNbre($id) + 1);
+            $em->flush();
+
+            return $this->redirect($ref);
+        }
+    }
+    public function dislikeAction($id, UserInterface $user,Request $request)
+    {
+        $ref = $request->headers->get('referer');
+        $em = $this->getDoctrine()->getManager();
+        $event = $em->getRepository('EventBundle:Event')->find($id);
+
+        if ($event)
+        {
+            $like = $em->getRepository('EventBundle:Likes')->findOneBy(array('eventId'=>$id, 'parentId'=>$user->getId()));
+            if($like) {
+                $em->remove($like);
+                $event->setNbre($event->getNbre($id) - 1);
+                $em->flush();
+            }
+            return $this->redirect($ref);
+        }
+
+        return $this->redirect($ref);
+    }
 }

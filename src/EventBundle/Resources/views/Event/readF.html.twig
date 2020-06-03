@@ -2,8 +2,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="shortcut icon" href="{{ asset('images/KINDO.png') }}" />
-        <title>KINDO</title>
+        <link rel="shortcut icon" href="{{ asset('logo.png') }}" />
+        <title>Kindo</title>
         {% block stylesheet %}
 
             <link rel='stylesheet' href="{{ asset('revslider/css/settings.css') }}" type='text/css' media='all' />
@@ -51,7 +51,7 @@
                         <div class="mobile_menu_header">
                             <i class="mobile_menu_switcher"><span></span><span></span><span></span></i>
                         </div>
-                        <ul style="position: center;id="menu-main-menu" class="main-menu menu-bees">
+                        <ul style="position: center; " id="menu-main-menu" class="main-menu menu-bees">
                         <!-- menu item -->
                         <li class="menu-item current-menu-item page_item current_page_item current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children bees-start">
                             <a href="#">
@@ -234,6 +234,28 @@
                                                 </div>
 
                                             </div>
+                                            {% for message in app.flashes('success') %}
+                                                <div class="alert alert-success">
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
+
+                                            <script >
+                                                function changer() {
+                                                    document.getElementById("btn").src= "{{ asset("images/heart1.png") }}";
+                                                }
+                                            </script>
+                                            <div class='meta_cont_wrapper'>
+                                                <div class='meta_cont'>
+                                                    <form method="post" class="cf-form contact-form" novalidate="novalidate">
+                                                        <span><a href='{{ path('event_like',{'id':e.id}) }}' id="btn" style="color:#7c151f"><i class="fa fa-heart" ></i> Like</a> {{ e.nbre }} </span> <a href='{{ path('event_dislike',{'id':e.id}) }}' id="btn"><i class="fa fa-heart"style="color:#040505"></i>Dislike</a>{{ e.nbreN }} <span></span>
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+
+
                                             <div class='separator-box'>
                                                 <canvas class='separator' width='1170' data-line-color='#f9e8b2'></canvas>
                                             </div>
