@@ -11,9 +11,9 @@
         </tr>
         {% for vehicule in vehicules %}
             <tr>
-                <td>{{ vehicule.vehicule.brand }}</td>
-                <td>{{ vehicule.grade.name }}</td>
                 <td>{{ vehicule.driver.firstname }}</td>
+                <td>{{ vehicule.driver.phonenumber }}</td>
+                <td>{{ vehicule.grade.name }}</td>
                 <td>{{ vehicule.vehicule.status }}</td>
             </tr>
         {% endfor %}
