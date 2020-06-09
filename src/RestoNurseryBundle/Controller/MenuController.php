@@ -38,14 +38,21 @@ class MenuController extends Controller
      * @Route("/indexF", name="menu_indexF")
      * @Method("GET")
      */
-    public function indexFAction()
+    public function indexFAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
 
-        $menus = $em->getRepository('RestoNurseryBundle:Menu')->findAll();
-
+        $em = $this->getDoctrine()->getRepository('RestoNurseryBundle:Menu')->findAll();
+        /**
+         * @var $paginator \Knp\Component\Pager\Paginator
+         */
+        $paginator = $this->get('knp_paginator');
+        $menus = $paginator->paginate(
+            $em,
+            $request->query->getInt('page',1),
+            $request->query->getInt('limit',2)
+        );
         return $this->render('menu/indexF.html.twig', array(
-            'menus' => $menus,
+            're' => $menus,
         ));
     }
     /**
