@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block afterheader %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+    <h1>Nursery's subscriptions list</h1>
+
+<div class ="row">
+
+    {% for saveNurse in saveNurses %}
+        <p> Child Name : {{ saveNurse.idChild }}</p>
+        <p> Start Date : {{ saveNurse.dateBegin }}</p>
+        <p> End Date : {{ saveNurse.dateEnd }}</p>
+        <a href="{{ path('savenurse_showF', { 'id': saveNurse.id }) }}">Show details </a>
+
+        --------------------------------------------------------------
+
+    {% endfor %}
+</div>
+
+    <div class='link' >
+    An Email has been sent to you, containing a PDF Policy.
+    </div>
+    <ul>
+        <li>
+            <a href="{{ path('savenurse_new') }}">Subscribe your child</a>
+        </li>
+    </ul>
+</center>
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block afterheader %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+    <h1>Details</h1>
+
+    <table>
+        <tbody>
+        <tr>
+            <th>Child</th>
+            <td>{{ saveNurse.id }}</td>
+        </tr>
+        <tr>
+            <th>Begin Date</th>
+            <td>{{ saveNurse.dateBegin }}</td>
+        </tr>
+        <tr>
+            <th>End Date </th>
+            <td>{{ saveNurse.dateEnd }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('savenurse_indexF') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('savenurse_editF', { 'id': saveNurse.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+</center>
+{% endblock %}
