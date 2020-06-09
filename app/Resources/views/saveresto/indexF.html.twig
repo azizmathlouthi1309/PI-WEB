@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block afterheader %}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<center>
+
+<h1>Your subscription's list</h1>
+
+    <div class ="row">
+
+    {% for saveResto in saveRestos %}
+                <p> Child Name : {{ saveResto.idChild }}</p>
+                <p> Start Date : {{ saveResto.dateBegin }}</p>
+                <p> End Date : {{ saveResto.dateEnd }}</p>
+        <a href="{{ path('saveresto_show', { 'id': saveResto.id }) }}">Show details </a>
+
+        --------------------------------------------------------------
+
+        {% endfor %}
+    </div>
+
+    <ul>
+        <li>
+            <a href="{{ path('saveresto_new') }}">Create a new subscription</a>
+        </li>
+    </ul>
+</center>
+{% endblock %}

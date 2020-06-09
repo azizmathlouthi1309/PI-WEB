@@ -1,13 +1,22 @@
-{% extends 'admin1.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block afterheader %}
-    <h1>Saveresto</h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+    <h1>Subscription's details</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ saveResto.id }}</td>
+                <th>Child Name </th>
+                <td>{{ saveResto.idChild }}</td>
             </tr>
             <tr>
                 <th>Datebegin</th>
@@ -19,18 +28,15 @@
             </tr>
         </tbody>
     </table>
-
     <ul>
         <li>
-            <a href="{{ path('saveresto_index') }}">Back to the list</a>
+            <a href="{{ path('saveresto_indexF') }}">Back to the list</a>
         </li>
         <li>
-            <a href="{{ path('saveresto_edit', { 'id': saveResto.id }) }}">Edit</a>
+            <a href="{{ path('saveresto_editF', { 'id': saveResto.id }) }}">Edit</a>
         </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+
     </ul>
+</center>
+
 {% endblock %}
