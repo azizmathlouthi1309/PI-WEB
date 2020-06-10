@@ -2,6 +2,10 @@
 
 namespace RestoNurseryBundle\Controller;
 
+use Dompdf\Dompdf;
+use Dompdf\Options;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
 use RestoNurseryBundle\Entity\SaveNurse;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -14,6 +18,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component
  */
 class SaveNurseController extends Controller
 {
+
     /**
      * Lists all saveNurse entities.
      *
@@ -32,6 +37,56 @@ class SaveNurseController extends Controller
     }
 
     /**
+     * Lists all saveNurse entities.
+     *
+     * @Route("/", name="savenurse_indexF")
+     * @Method("GET")
+     */
+    public function indexFAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $saveNurses = $em->getRepository('RestoNurseryBundle:SaveNurse')->findAll();
+        $mail = new PHPMailer(true);
+
+        try {
+            //Server settings
+            //$mail->SMTPDebug = 1;                      // Enable verbose debug output
+            $mail->isSMTP();                                            // Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
+            // SMTP password
+            $mail->SMTPSecure = 'tls';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
+            $mail->Port       = 587;                                    // TCP port to connect to
+            /* Username (email address). */
+            $mail->Username = 'kindogarten2020@gmail.com';
+
+            /* Google account password. */
+            $mail->Password = '2020kindo';
+            //Recipients
+            $mail->setFrom('from@example.com', 'OUR POLICY ');
+            $mail->addAddress('nada.chniter@esprit.tn');     // Add a recipient
+
+            $mail->addAttachment('policy.pdf', 'policy.pdf');         // Add attachments
+
+            // Content
+            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->Subject = 'POLICY';
+             $mail->Body    = ' Good morning , This PDF contains the POLICY of our Website & Kindergarten. Cordially. <b>!</b> ';
+             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+            $mail->send();
+          //  echo 'Message has been sent';
+        } catch (Exception $e) {
+         //   echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
+
+
+        return $this->render('savenurse/indexF.html.twig', array(
+            'saveNurses' => $saveNurses,
+        ));
+    }
+    /**
      * Creates a new saveNurse entity.
      *
      * @Route("/new", name="savenurse_new")
@@ -48,7 +103,7 @@ class SaveNurseController extends Controller
             $em->persist($saveNurse);
             $em->flush();
 
-            return $this->redirectToRoute('savenurse_show', array('id' => $saveNurse->getId()));
+            return $this->redirectToRoute('savenurse_indexF', array('id' => $saveNurse->getId()));
         }
 
         return $this->render('savenurse/new.html.twig', array(
@@ -68,6 +123,22 @@ class SaveNurseController extends Controller
         $deleteForm = $this->createDeleteForm($saveNurse);
 
         return $this->render('savenurse/show.html.twig', array(
+            'saveNurse' => $saveNurse,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Finds and displays a saveNurse entity.
+     *
+     * @Route("/{id}", name="savenurse_showF")
+     * @Method("GET")
+     */
+    public function showFAction(SaveNurse $saveNurse)
+    {
+        $deleteForm = $this->createDeleteForm($saveNurse);
+
+        return $this->render('savenurse/showF.html.twig', array(
             'saveNurse' => $saveNurse,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -99,6 +170,30 @@ class SaveNurseController extends Controller
     }
 
     /**
+     * Displays a form to edit an existing saveNurse entity.
+     *
+     * @Route("/{id}/edit", name="savenurse_edit")
+     * @Method({"GET", "POST"})
+     */
+    public function editFAction(Request $request, SaveNurse $saveNurse)
+    {
+        $deleteForm = $this->createDeleteForm($saveNurse);
+        $editForm = $this->createForm('RestoNurseryBundle\Form\SaveNurseType', $saveNurse);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('savenurse_edit', array('id' => $saveNurse->getId()));
+        }
+
+        return $this->render('savenurse/editF.html.twig', array(
+            'saveNurse' => $saveNurse,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+    /**
      * Deletes a saveNurse entity.
      *
      * @Route("/{id}", name="savenurse_delete")
@@ -115,7 +210,7 @@ class SaveNurseController extends Controller
             $em->flush();
         }
 
-        return $this->redirectToRoute('savenurse_index');
+        return $this->redirectToRoute('savenurse_indexF');
     }
 
     /**
@@ -133,4 +228,6 @@ class SaveNurseController extends Controller
             ->getForm()
         ;
     }
+
+
 }

@@ -5,12 +5,9 @@
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Subscribe" href='{{ path('saveresto_index') }}'/>
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('saveresto_index') }}">Back to the list</a>
-        </li>
-    </ul>
+            <a href="">Already subscribed ? Check your subscription's details </a>
+
 {% endblock %}

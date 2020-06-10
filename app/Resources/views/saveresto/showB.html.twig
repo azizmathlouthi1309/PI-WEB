@@ -1,0 +1,31 @@
+
+{% extends 'admin1.html.twig' %}
+{% block afterheader %}
+
+    <h1>{{ saveResto.idChild }} 's Subscription </h1>
+
+        <table>
+            <tbody>
+
+            <tr>
+                <th>Datebegin</th>
+                <td>{{ saveResto.dateBegin }}</td>
+            </tr>
+            <tr>
+                <th>Dateend</th>
+                <td>{{ saveResto.dateEnd }}</td>
+            </tr>
+            </tbody>
+        </table>
+    <ul>
+        <li>
+            <a href="{{ path('saveresto_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('saveresto_edit', { 'id': saveResto.id }) }}">Edit</a>
+        </li>
+
+    </ul>
+
+{% endblock afterheader %}
+
