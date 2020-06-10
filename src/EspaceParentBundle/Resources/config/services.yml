@@ -1,0 +1,4 @@
+services:
+#    espace_parent.example:
+#        class: EspaceParentBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

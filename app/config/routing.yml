@@ -60,3 +60,23 @@ menu_indexB:
 
 restonursery_restonursery:
     resource: "@RestoNurseryBundle/Resources/config/myrouting.yml"
+
+espace_parent:
+    resource: "@EspaceParentBundle/Resources/config/routing.yml"
+    prefix:   /
+espace_parent_view:
+    resource: "@EspaceParentBundle/Controller/viewController.php"
+    type:     annotation
+
+espace_parent_complaint:
+    resource: "@EspaceParentBundle/Controller/complaintController.php"
+    type:     annotation
+
+espace_parent_child:
+    resource: "@EspaceParentBundle/Controller/childController.php"
+    type:     annotation
+espace_child:
+    resource: "@EspaceParentBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

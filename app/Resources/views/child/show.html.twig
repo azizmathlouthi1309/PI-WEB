@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+
+{% block afterheader %}
+    <h1>Child</h1>
+<section class="content" >
+    <div class="container-fluid" >
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card card-primary">
+                    <div class="card-header">
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ child.id }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ child.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ child.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ child.level }}</td>
+            </tr>
+
+
+            <tr>
+                <th>Age</th>
+                <td>{{ child.age }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ child.photo }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href={{ path('child_delete', { 'id': child.id }) }}><button>Delete Child</button></a>
+    <ul>
+        <li>
+            <a href="{{ path('child_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('child_edit', { 'id': child.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

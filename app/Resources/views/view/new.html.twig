@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+
+  {% block header %}
+  {% endblock %}
+{% block afterheader %}
+    <link rel="stylesheet" href="{{ asset('css/rating.css') }}">
+    <h1>View creation</h1>
+
+    {{ form_start(form) }}
+    <h3>Sender Name</h3>
+    <input type="text"  {{ form_widget(form.senderName) }}
+    <h3>Subject</h3>
+    <input type="text" {{ form_widget(form.subject) }}
+    <input type="hidden" id="rate" {{ form_widget(form.nbStars) }}
+    <span class="star-cb-group">
+      <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
+      <input type="radio" id="rating-4" name="rating" value="4" /><label for="rating-4">4</label>
+      <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
+      <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
+      <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
+      <input type="radio" id="rating-0" name="rating" value="0" checked="checked"  class="star-cb-clear" /><label for="rating-0">0</label>
+
+    </span>
+
+    <h3>Message</h3>
+    <input type="text"  {{ form_widget(form.message) }}
+
+
+    <input type="submit" value="Create" />
+
+
+    {{ form_end(form) }}
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="{{ asset('js/rating.js') }}"></script>
+
+{% endblock %}

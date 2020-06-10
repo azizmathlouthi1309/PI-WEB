@@ -36,7 +36,7 @@ class SaveResto
     private $dateEnd;
 
     /**
-     * @ORM\OneToOne(targetEntity="FirstBundle\Entity\Child", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="EspaceParentBundle\Entity\Child", cascade={"persist"})
      * @ORM\JoinColumn(name="Child_id", referencedColumnName="id")
      */
     private $idChild;

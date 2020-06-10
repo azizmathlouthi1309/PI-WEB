@@ -1,0 +1,140 @@
+{% extends 'admin1.html.twig' %}
+
+{% block afterheader %}
+
+<div class="content" style="min-height: 1416.81px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-10">
+                    <h1>Complaints list</h1>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <form method="post">
+                    <div class="box-header with-border">
+
+                        <div class="box-tools pull-right">
+                            <div class="has-feedback">
+                                <input type="text"  name="name" class="form-control input-sm" placeholder="Search..." id="myInput">
+
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+    <table  id="myTable" class="table table-striped projects">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Subject</th>
+
+                <th>Type</th>
+                <th>Message</th>
+                <th>Response</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+        {% for complaint in complaints %}
+            <tr>
+                <td><a href="{{ path('complaint_show', { 'id': complaint.id }) }}">{{ complaint.id }}</a></td>
+                <td>{{ complaint.subject }}</td>
+                <td>{{ complaint.type }}</td>
+                <td>{{ complaint.message }}</td>
+                <td>{{ complaint.response }}</td>
+                <td>{{ complaint.status }}</td>
+                <td>
+
+                </td>
+                <td>
+
+                        <a class="btn btn-danger " href="{{ path('complaint_delete', { 'id': complaint.id }) }}">Delete</a>
+                  </td>
+                <td>
+                        <a class="btn btn-info " href="{{ path('complaint_edit', { 'id': complaint.id }) }}">answer</a>
+                   </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+           </table>
+                        </div>
+
+
+                        <!-- /.card -->
+
+
+                        <!-- /.card -->
+                    </div>
+                    <!-- /.col -->
+
+                    <!-- /.card -->
+                </form>
+            </div>
+            <!-- /.col -->
+        </div>
+
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+<script>
+    function myFunction() {
+        // Declare variables
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+
+    </form>
+
+    </
+    </div>
+    </div>
+    <div class="card-body p-0">
+        </div>
+
+        <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+        <div class="col-md-8"> </div>
+        </section>
+        <!-- /.content -->
+        </div>
+{% endblock %}

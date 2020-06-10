@@ -1,0 +1,45 @@
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+</head>
+<body>
+
+
+<h2>Your Children</h2>
+
+<table>
+
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Age</th>
+        <th>Level</th>
+        <th>Class name</th>
+        <th>Change Class</th>
+
+    </tr>
+    {% for vehicule in child %}
+        <tr>
+            <td>{{vehicule.firstname}}</td>
+            <td>{{vehicule.lastname}}</td>
+            <td>{{vehicule.age}}</td>
+            <td>{{vehicule.level}}</td>
+            <td>{{vehicule.classid.name}}</td>
+            <td><a href={{ path('newclass_child', { 'id': vehicule.id }) }}><button style="width: 100%">Change class</button></a></td>
+        </tr>
+    {% endfor %}
+</table>

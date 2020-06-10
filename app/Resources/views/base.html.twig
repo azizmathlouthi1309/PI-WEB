@@ -97,7 +97,15 @@
                                                     </li>class_homepage
                                                     <li class="menu-item"><a href={{path('activity_page')}}>activities</a></li>
                                                     <li class="menu-item"><a href={{path('class_homepage')}}>Classes </a></li>
-                                                    <li class="menu-item"><a href="page-services-2.html">Parent's Space</a></li>
+                                                    <li class="menu-item menu-item-has-children"><a href="#">Parent's Space<div class="canvas_wrapper"><canvas class="menu_dashed"></canvas></div></a>
+                                                        <span class='button_open'></span>
+                                                        <ul class="sub-menu">
+                                                            <li class="menu-item"><a href={{path('child_new')}}>Subscribe your Child</a></li>
+                                                            <li class="menu-item"><a href={{ path('complaint_new') }}>Send Complaint</a></li>
+                                                            <li class="menu-item"><a href={{path('view_new')}}>Rate Us</a></li>
+                                                            <li class="menu-item"><a href={{path('change_child')}}>change Class</a></li>
+                                                        </ul>
+                                                    </li>
                                                     <li class="menu-item"><a href="{{ path('event_readF')}}">Events</a></li>
                                                     <li class="menu-item"><a href={{ path('menu_indexF') }}>Nursery & Restauration</a></li>
                                                     <li class="menu-item"><a href="{{path('transport_menu')}}">Transport Space</a></li>

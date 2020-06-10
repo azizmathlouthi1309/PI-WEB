@@ -1,0 +1,55 @@
+espace_parent_homepage:
+    path:     /
+    defaults: { _controller: EspaceParentBundle:index }
+
+child_delete:
+    path:     /childdelete/{id}
+    defaults: { _controller: EspaceParentBundle:child:delete }
+
+complaint_delete:
+    path:     /complaintdelete/{id}
+    defaults: { _controller: EspaceParentBundle:complaint:delete }
+
+
+complaint_edit:
+    path:     /edit/{id}
+    defaults: { _controller: EspaceParentBundle:complaint:edit }
+
+view_delete:
+    path:     /viewdelete/{id}
+    defaults: { _controller: EspaceParentBundle:view:delete }
+
+affect_child:
+    path:     /affectchild
+    defaults: { _controller: EspaceParentBundle:child:affectchild }
+
+modifier_child:
+    path:     /modifier/{id}
+    defaults: { _controller: EspaceParentBundle:child:modifier }
+
+edit_child:
+  path:     /editchild/{id}
+  defaults: { _controller: EspaceParentBundle:child:edit }
+
+complaint_list:
+     path:     /complaint_index
+     defaults: { _controller: EspaceParentBundle:complaint:index }
+
+view_list:
+     path:     /view_index
+     defaults: { _controller: EspaceParentBundle:view:index }
+
+
+child_list:
+    path:     /child_index
+    defaults: { _controller: EspaceParentBundle:child:index }
+
+change_child:
+    path:     /child_change
+    defaults: { _controller: EspaceParentBundle:child:changeclass }
+newclass_child:
+    path:     /newclass/{id}
+    defaults: { _controller: EspaceParentBundle:child:confirmnewclass }
+view_delete2:
+    path:     /delleteview2/{id}
+    defaults: { _controller: EspaceParentBundle:view:delleteview2 }

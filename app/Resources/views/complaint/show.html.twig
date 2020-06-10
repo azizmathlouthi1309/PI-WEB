@@ -1,0 +1,77 @@
+{% extends 'admin1.html.twig' %}
+
+{% block afterheader %}
+<section class="content" >
+    <div class="container-fluid" >
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card card-primary">
+                    <div class="card-header">
+
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ complaint.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Subject</th>
+                            <td>{{ complaint.subject }}</td>
+                        </tr>
+                        <tr>
+
+                        </tr>
+                        <tr>
+                            <th>Parentid</th>
+                            <td>{{ complaint.parentId }}</td>
+                        </tr>
+                        <tr>
+                            <th>Type</th>
+                            <td>{{ complaint.type }}</td>
+                        </tr>
+                        <tr>
+                            <th>Message</th>
+                            <td>{{ complaint.message }}</td>
+                        </tr>
+                        <tr>
+                            <th>Response</th>
+                            <td>{{ complaint.response }}</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>{{ complaint.status }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('complaint_index') }}">Back to the list</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('complaint_edit', { 'id': complaint.id }) }}">Edit</a>
+                            <a href="{{ path('complaint_delete', { 'id': complaint.id }) }}"><button>Delete Complaint</button></a>
+                        </li>
+                        <li>
+                            {{ form_start(delete_form) }}
+                            <input type="submit" value="Delete">
+                            {{ form_end(delete_form) }}
+                        </li>
+                    </ul>
+
+
+
+
+
+
+
+                    <!-- radio -->
+
+                </div>
+                <!-- /.box-body -->
+            </div>
+        {% endblock %}
+
+

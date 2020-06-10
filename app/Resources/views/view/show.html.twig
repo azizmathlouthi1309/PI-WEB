@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block afterheader %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- //js -->
+
+</head>
+<body>
+<div class="grid_row clearfix">
+    <div class="grid_col grid_col_12">
+        <div class="ce clearfix">
+            <div>
+                <h3 class="ce_title" style="text-align: center;">our  <span>Views</span></h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid_col grid_col_6"></div>
+                    <div class="grid_col grid_col_6">
+                        <table class="table table-bordered" id="myTable">
+                            <thead>
+                            <tr>
+
+                                <th>Subject</th>
+                                <th>Message</th>
+                                <th>Ratings</th>
+
+
+
+                            </tr>
+                            </thead>
+                        {% for view in views %}
+                            <article class="item small">
+
+                                <tr>
+
+                                    <td>{{ view.subject }}</td>
+                                    <td>{{ view.message }}</td>
+                                    <td>{{ view.nbStars }}</td>
+
+
+                                </tr>
+
+
+
+                            </article>
+                        {% endfor %}
+                        </table>
+                    </div>
+
+</div>
+
+</body>
+</html>
+{% endblock %}
+

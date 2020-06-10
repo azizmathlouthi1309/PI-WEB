@@ -1,0 +1,148 @@
+{% extends 'admin1.html.twig' %}
+
+{% block afterheader %}
+
+
+<div class="content" style="min-height: 1416.81px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-10">
+                    <h1>Kindo Children</h1>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+
+    <!-- Main content -->
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <form method="post">
+                    <div class="box-header with-border">
+
+<div class="box-tools pull-right">
+    <div class="has-feedback">
+        <input type="text"  name="name" class="form-control input-sm" placeholder="Search..." id="myInput">
+
+    </div>
+</div>
+                                <!-- /.card-header -->
+                                <div class="card-body">
+                                    <table class="table table-bordered" id="myTable">
+                                        <thead>
+                                        <tr>
+
+                                            <th>Firstname</th>
+                                            <th>Lastname</th>
+
+                                            <th>Age</th>
+                                            <th>Level</th>
+                                            <th>Class</th>
+                                            <th>Picture</th>
+                                            <th>Update</th>
+                                            <th>Delete</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for child in children %}
+                                        <tr>
+
+
+                                            <td>{{ child.firstname }}</td>
+                                            <td>{{ child.lastname }}</td>
+
+
+                                            <td>{{ child.age }}</td>
+                                            <td>{{ child.level }}</td>
+                                            <td>{{ child.classid.name }}</td>
+                                            <td> <img src="{{ asset('uploads/images/'~ child.photo) }}" width="20" height="20" > </td>
+                                            <td>
+                                                <button type="button" class="btn btn-warning mr-1">
+                                                    <i class="ft-edit" ></i>  <a  href="{{ path('child_edit',{'id' :child.id}) }}"> update</a>
+                                                </button></td>
+                                            <td> <button type="button" class="btn btn-danger mr-1">
+                                                    <i class="ft-delete" ></i>   <a href="{{ path('child_delete',{'id' :child.id}) }}">Delete</a>
+                                                </button></td>
+
+                                        </tr>
+
+                                        {% endfor %}
+
+
+
+</tbody>
+                                    </table>
+                                </div>
+
+
+                            <!-- /.card -->
+
+
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+
+                            <!-- /.card -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+    <script>
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        </form>
+
+      </
+        </div>
+        </div>
+        <div class="card-body p-0">
+            </div>
+
+            <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            <div class="col-md-8"> </div>
+            </section>
+            <!-- /.content -->
+            </div>
+{% endblock %}

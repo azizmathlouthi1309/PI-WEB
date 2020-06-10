@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new ActivityBundle\ActivityBundle(),
             new ClassBundle\ClassBundle(),
             new RestoNurseryBundle\RestoNurseryBundle(),
+            new EspaceParentBundle\EspaceParentBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
