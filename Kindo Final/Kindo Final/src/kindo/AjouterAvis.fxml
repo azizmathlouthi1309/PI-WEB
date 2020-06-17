@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.AjouterAvisController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../img/Background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="595.0" fitWidth="659.0" layoutX="-18.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Ahmed/Documents/NetBeansProjects/gestion%20Espace%20ParentV/backprinc.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="AjouterAvis" layoutX="152.0" layoutY="345.0" mnemonicParsing="false" onAction="#AjouterAvis" prefHeight="25.0" prefWidth="88.0" style="-fx-background-color: #110750;" text="Add Opinion" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="menu" layoutX="509.0" layoutY="358.0" mnemonicParsing="false" onAction="#menu" prefHeight="25.0" prefWidth="67.0" style="-fx-background-color: #ff7200;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="Name" layoutX="149.0" layoutY="78.0" prefHeight="25.0" prefWidth="327.0" />
+      <TextField fx:id="MessageAvis" layoutX="152.0" layoutY="180.0" prefHeight="94.0" prefWidth="327.0" />
+      <TextField fx:id="SubjectAvis" layoutX="150.0" layoutY="129.0" prefHeight="25.0" prefWidth="327.0" />
+      <Text fill="#ff2b00" layoutX="189.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Opinion " textAlignment="CENTER" wrappingWidth="231.19482421875">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="75.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Name" />
+      <Text layoutX="74.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject" />
+      <Text layoutX="71.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Message" />
+      <Text layoutX="69.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rate here" />
+      <ImageView fitHeight="110.0" fitWidth="231.0" layoutX="-1.0" layoutY="-27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Ahmed/Documents/NetBeansProjects/gestion%20Espace%20ParentV/kindoooo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="rate" layoutX="152.0" layoutY="300.0" prefHeight="25.0" prefWidth="144.0" />
+      <Label fx:id="nameKey" layoutX="487.0" layoutY="102.0" onKeyReleased="#NameKey" prefHeight="17.0" prefWidth="151.0" textFill="RED" />
+      <Label fx:id="SubjectK" layoutX="493.0" layoutY="160.0" onKeyReleased="#SubjectKey" prefHeight="17.0" prefWidth="151.0" textFill="RED" />
+      <Label fx:id="messageK" layoutX="487.0" layoutY="238.0" onKeyReleased="#MessageKey" prefHeight="17.0" prefWidth="151.0" textFill="RED" />
+      <Label fx:id="rateK" layoutX="493.0" layoutY="338.0" onKeyReleased="#rateKey" prefHeight="17.0" prefWidth="151.0" textFill="RED" />
+      <Label fx:id="id_label" layoutX="27.0" layoutY="355.0" text="Label" />
+                  <Label fx:id="password_label" layoutX="25.0" layoutY="378.0" text="Label" />
+   </children>
+</AnchorPane>

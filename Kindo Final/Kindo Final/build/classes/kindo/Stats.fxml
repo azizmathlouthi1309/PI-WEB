@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.StatsController">
+   <children>
+      <ImageView fitHeight="573.0" fitWidth="1017.0" layoutX="-26.0" layoutY="-116.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/Background.jpg" />
+         </image>
+      </ImageView>
+      <PieChart fx:id="pie" layoutX="56.0" title="Users Distribution" />
+      <Button layoutX="510.0" layoutY="414.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #ff3f00;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

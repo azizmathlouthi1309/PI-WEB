@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.ListePublicationParentController">
+   <ImageView fitHeight="400.0" fitWidth="600.0">
+      <image>
+         <Image url="@../img/Background.jpg" />
+      </image>
+   </ImageView>
+     <TableView fx:id="tabact" layoutX="108.0" layoutY="107.0" prefHeight="257.0" prefWidth="419.0">
+         <columns>
+            <TableColumn fx:id="subjectab" prefWidth="73.0" text="Subject" />
+            <TableColumn fx:id="descriptiontab" prefWidth="249.0" text="Content" />
+            <TableColumn fx:id="classtab" prefWidth="114.0" text="Class" />
+         </columns>
+      </TableView>
+      <Label fx:id="id_label" layoutX="27.0" layoutY="371.0" prefHeight="1.0" prefWidth="553.0" text="Label" />
+                  <Label fx:id="password_label" layoutX="25.0" layoutY="356.0" text="Label" />
+         <TextField fx:id="tfsearch" layoutX="108.0" layoutY="74.0" prefHeight="27.0" prefWidth="223.0" promptText=" Search..." style="-fx-background-color: white; -fx-border-color: orange;" />
+   <Button layoutX="533.0" layoutY="366.0" mnemonicParsing="false" onAction="#returnMaissa" prefHeight="27.0" prefWidth="59.0" style="-fx-background-color: #ff2d05;" text="Back" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font></Button>
+   <Label layoutX="108.0" layoutY="30.0" prefHeight="26.0" prefWidth="395.0" text="Hey , Check some Postes about classes !" textFill="#041551">
+      <font>
+         <Font name="Arial Bold" size="19.0" />
+      </font>
+   </Label>
+      
+</AnchorPane>

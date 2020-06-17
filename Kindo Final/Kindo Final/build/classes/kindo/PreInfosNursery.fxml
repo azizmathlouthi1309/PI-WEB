@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="231.0" prefWidth="412.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.PreInfosNurseryController">
+   <children>
+      <ImageView fitHeight="242.0" fitWidth="419.0" opacity="0.7">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Desktop/Kindo%20Final/Kindo%20Final/Background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="242.0" fitWidth="412.0">
+         <image>
+            <Image url="@backprinc.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#0bbc11" layoutX="116.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Enter your son's ID">
+         <font>
+            <Font name="Berlin Sans FB" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="sonId" layoutX="137.0" layoutY="88.0" />
+      <Text layoutX="108.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID ">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="submitochoice" layoutX="179.0" layoutY="132.0" mnemonicParsing="false" onMouseClicked="#gotoinfo" style="-fx-background-color: #00d307;" text="Submit" textFill="WHITE" />
+      <Text fx:id="calltoaction" fill="#9e1d1d" layoutX="76.0" layoutY="180.0" onMouseClicked="#gotosubscribe" strokeType="OUTSIDE" strokeWidth="0.0" text="Is your son new here ? Subscribe to nusery services" />
+      <Button layoutX="14.0" layoutY="192.0" mnemonicParsing="false" onMouseClicked="#goback" text="BACK" />
+   </children>
+</AnchorPane>

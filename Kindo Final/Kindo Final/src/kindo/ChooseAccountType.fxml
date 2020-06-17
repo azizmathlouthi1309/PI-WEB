@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="400.0" maxWidth="600.0" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.ChooseAccountTypeController">
+   <children>
+      <ImageView fitHeight="540.0" fitWidth="608.0" layoutY="-120.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/Background.jpg" />
+         </image></ImageView>
+      <CheckBox fx:id="parent" layoutX="426.0" layoutY="289.0" mnemonicParsing="false" />
+      <Label fx:id="id" layoutX="513.0" layoutY="332.0" text="id" />
+      <CheckBox fx:id="teacher" layoutX="180.0" layoutY="289.0" mnemonicParsing="false" />
+      <Button layoutX="253.0" layoutY="328.0" mnemonicParsing="false" onAction="#validate" prefHeight="17.0" prefWidth="123.0" style="-fx-background-color: #091853;" text="Validate" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <TextField fx:id="subject" layoutX="76.0" layoutY="328.0" prefHeight="29.0" prefWidth="159.0" />
+      <ImageView fitHeight="95.0" fitWidth="159.0" layoutX="14.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/final%20logo%20(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="176.0" fitWidth="173.0" layoutX="90.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/teacher.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="225.0" layoutY="56.0" prefHeight="36.0" prefWidth="374.0" text="So You Are .. ?" textAlignment="CENTER" textFill="#ff6701">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="335.0" prefHeight="17.0" prefWidth="48.0" text="Subject" />
+      <ImageView fitHeight="176.0" fitWidth="129.0" layoutX="384.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/parent.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="password_label" layoutX="506.0" layoutY="360.0" text="pass" />
+   </children>
+</AnchorPane>

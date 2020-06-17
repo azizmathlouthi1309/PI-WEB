@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.DisplayEventFController">
+   <children>
+      <ImageView fitHeight="488.0" fitWidth="606.0" opacity="0.48">
+         <image>
+            <Image url="@../img/Background.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#ff6900" layoutX="237.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Our Events">
+         <font>
+            <Font name="Calibri Bold" size="29.0" />
+         </font>
+      </Text>
+      <Label fx:id="id_label" layoutX="27.0" layoutY="355.0" text="Label" />
+                  <Label fx:id="password_label" layoutX="25.0" layoutY="378.0" text="Label" />
+      <ScrollPane fx:id="scoll" layoutY="82.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-border-color: gris;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="82.0">
+         <padding>
+            <Insets left="200.0" />
+         </padding>
+         <content>
+            <ImageView fitHeight="482.0" fitWidth="600.0" opacity="0.29">
+               <image>
+                  <Image url="@../img/Background.jpg" />
+               </image>
+            </ImageView>
+         </content>
+      </ScrollPane>
+      <Button layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#goback" text="Back" />
+   </children>
+</AnchorPane>

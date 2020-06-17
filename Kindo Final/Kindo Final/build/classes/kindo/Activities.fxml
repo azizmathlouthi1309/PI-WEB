@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="426.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.ActivitiesController">
+   <children>
+      <TextField fx:id="tfsearch" layoutX="150.0" layoutY="33.0" onAction="#Search" prefHeight="27.0" prefWidth="184.0" promptText=" Search..." style="-fx-background-color: white; -fx-border-color: orange;" />
+      <Button fx:id="btnAdd" layoutX="30.0" layoutY="276.0" mnemonicParsing="false" onAction="#Add" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #ff5c33;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="30.0" layoutY="359.0" mnemonicParsing="false" onAction="#Delete" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: #ff5c33;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="res" layoutX="345.0" layoutY="33.0" mnemonicParsing="false" onAction="#Reset" prefHeight="27.0" prefWidth="71.0" style="-fx-background-color: #ffb31a;" text="Reset" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="8.0" layoutY="90.0" prefHeight="22.0" prefWidth="139.0" text="Activity Name">
+         <font>
+            <Font name="Calibri" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfnom" layoutX="7.0" layoutY="115.0" prefHeight="25.0" prefWidth="139.0" promptText="Name" />
+      <TextField fx:id="tfdescription" layoutX="7.0" layoutY="176.0" prefHeight="85.0" prefWidth="139.0" promptText="Description" />
+      <Button fx:id="btnUpdate" layoutX="30.0" layoutY="318.0" mnemonicParsing="false" onAction="#Update" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: #ff5c33;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="9.0" layoutY="152.0" prefHeight="22.0" prefWidth="139.0" text="Description">
+         <font>
+            <Font name="Calibri" size="13.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tabact" layoutX="150.0" layoutY="64.0" onMouseClicked="#handleRowSelect" prefHeight="331.0" prefWidth="271.0">
+         <columns>
+            <TableColumn fx:id="activitynametab" prefWidth="67.0" text="Name" />
+            <TableColumn fx:id="descriptiontab" minWidth="-Infinity" prefWidth="215.0" text="Description" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

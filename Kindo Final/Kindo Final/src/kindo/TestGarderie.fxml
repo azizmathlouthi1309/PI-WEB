@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.TestGarderieController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="607.0" opacity="0.37">
+         <image>
+            <Image url="@../img/garderieback.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="400.0" fitWidth="600.0" opacity="0.74">
+         <image>
+            <Image url="file:/C:/Users/nada/Documents/NetBeansProjects/NadaProject/src/nadaproject/Gui/garderieback.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="257.0" fitWidth="356.0" layoutX="132.0" layoutY="72.0" opacity="0.91">
+         <image>
+            <Image url="file:/C:/Users/nada/Documents/NetBeansProjects/NadaProject/src/nadaproject/Gui/orangebck.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="nurserysched" layoutX="149.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#gotoschedule" prefHeight="35.0" prefWidth="322.0" style="-fx-background-color: #46118B;" text="Consult schedule &amp; prices" textFill="#d7d7d7">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="59.0" fitWidth="98.0" layoutX="488.0">
+         <image>
+            <Image url="file:/C:/Users/nada/Documents/NetBeansProjects/NadaProject/src/nadaproject/Gui/final%20logo.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="14.0" layoutY="17.0" mnemonicParsing="false" onMouseClicked="#returnback" style="-fx-background-color: #939393;" text="Return" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="nurseryinfo" layoutX="149.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#gotoinfosNurs" prefHeight="35.0" prefWidth="322.0" style="-fx-background-color: #ffffff;" text="Consult subscription's informations" textFill="#200a90">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

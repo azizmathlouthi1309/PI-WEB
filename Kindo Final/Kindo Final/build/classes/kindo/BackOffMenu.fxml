@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.BackOffMenuController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="200.0">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Desktop/Kindo%20Final/Kindo%20Final/src/img/adminbck.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="MenuMana" layoutX="9.0" layoutY="142.0" mnemonicParsing="false" onMouseClicked="#displayMenuMana" prefHeight="32.0" prefWidth="185.0" style="-fx-background-color: #009ff4;" text="Menus Management" />
+      <Button fx:id="RestoMana" layoutX="9.0" layoutY="181.0" mnemonicParsing="false" onMouseClicked="#displayRestoMana" prefHeight="32.0" prefWidth="185.0" style="-fx-background-color: #009ff4;" text="Restauration Management" />
+      <Button fx:id="NursMana" layoutX="9.0" layoutY="227.0" mnemonicParsing="false" onMouseClicked="#displayNursMana" prefHeight="32.0" prefWidth="185.0" style="-fx-background-color: #009ff4;" text="Nursery Management" />
+      <Button fx:id="QuitBtn" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#Backtotoo" onMouseClicked="#backto" prefHeight="22.0" prefWidth="61.0" style="-fx-background-color: White;" text="Back" />
+   </children>
+</AnchorPane>

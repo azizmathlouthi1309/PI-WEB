@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.ValidateAccountController">
+   <children>
+      <ImageView fitHeight="581.0" fitWidth="646.0" layoutX="-10.0" layoutY="-178.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/Background.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="code_act" layoutX="228.0" layoutY="236.0" prefHeight="25.0" prefWidth="170.0" />
+      <Label layoutX="124.0" layoutY="129.0" text="Activation Code" textFill="#ff7a00">
+         <font>
+            <Font size="54.0" />
+         </font>
+      </Label>
+      <Button fx:id="validate" alignment="CENTER" layoutX="248.0" layoutY="286.0" mnemonicParsing="false" onAction="#CodeValidate" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #251c46;" text="Validate" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Button>
+      <Label fx:id="id" layoutX="599.0" layoutY="22.0" text="id" />
+      <Label fx:id="code" layoutX="591.0" layoutY="49.0" text="code" />
+      <ImageView fitHeight="108.0" fitWidth="207.0" layoutX="20.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/final%20logo%20(2).png" />
+         </image>
+      </ImageView>
+      <Label fx:id="password_label" layoutX="50.0" layoutY="240.0" prefHeight="17.0" prefWidth="26.0" text="pass" />
+   </children>
+</AnchorPane>

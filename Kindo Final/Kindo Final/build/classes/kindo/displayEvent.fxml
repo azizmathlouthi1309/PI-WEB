@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.DisplayEventController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="229.0">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Desktop/Kindo%20Final/Kindo%20Final/src/img/adminbck.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="edit" layoutX="360.0" layoutY="345.0" mnemonicParsing="false" onAction="#delete" prefHeight="32.0" prefWidth="90.0" style="-fx-background-color: #780000;" text="Delete" textFill="WHITE" />
+      <TextField fx:id="tsearch" layoutX="233.0" layoutY="39.0" opacity="0.7" prefHeight="25.0" prefWidth="261.0" promptText="Search..." />
+      <Button fx:id="participation" layoutX="502.0" layoutY="39.0" mnemonicParsing="false" onAction="#participation" style="-fx-background-color: #115d00;" text="Participation" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TableView fx:id="table" layoutX="231.0" layoutY="91.0" onMouseClicked="#handleRowSelect" prefHeight="242.0" prefWidth="367.0">
+        <columns>
+          <TableColumn fx:id="name" prefWidth="68.0" text="Name" />
+            <TableColumn fx:id="description" prefWidth="82.0" text="Description" />
+            <TableColumn fx:id="date" prefWidth="69.0" text="Date" />
+            <TableColumn fx:id="hour_begin" prefWidth="76.0" text="Hour begin" />
+            <TableColumn fx:id="hour_end" text="Hour end" />
+            <TableColumn fx:id="capacity" prefWidth="93.0" text="Capacity" />
+        </columns>
+      </TableView>
+      <Label contentDisplay="RIGHT" layoutX="13.0" layoutY="58.0" prefHeight="17.0" prefWidth="61.0" text="Name" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="10.0" layoutY="105.0" text="Description" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="140.0" prefHeight="17.0" prefWidth="61.0" text="Date" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="182.0" prefHeight="21.0" prefWidth="76.0" text="Hour begin" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="226.0" prefHeight="21.0" prefWidth="76.0" text="Hour end" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="13.0" layoutY="266.0" prefHeight="17.0" prefWidth="61.0" text="Capacity" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Button fx:id="add" blendMode="SCREEN" layoutX="93.0" layoutY="333.0" mnemonicParsing="false" onAction="#add" prefHeight="25.0" prefWidth="61.0" styleClass="iconedelete" stylesheets="@style.css" text="Add" />
+      <DatePicker fx:id="addDate" layoutX="74.0" layoutY="145.0" opacity="0.7" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="tfname" blendMode="SRC_ATOP" cache="true" cacheHint="SPEED" layoutX="74.0" layoutY="63.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.7" pickOnBounds="false" promptText="Name" />
+      <TextField fx:id="descripition" layoutX="74.0" layoutY="102.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.7" promptText="Description" />
+      <TextField fx:id="addcapacity" layoutX="74.0" layoutY="271.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.7" promptText="Capacity" />
+      <TextField fx:id="addhour_begin" layoutX="74.0" layoutY="187.0" opacity="0.7" promptText="Hour begin" />
+      <TextField fx:id="addhour_end" layoutX="74.0" layoutY="231.0" opacity="0.7" promptText="Hour end" />
+      <Button fx:id="update" blendMode="SCREEN" layoutX="26.0" layoutY="352.0" mnemonicParsing="false" onAction="#update" prefHeight="25.0" prefWidth="61.0" styleClass="iconeadd" stylesheets="@style.css" text="Edit" />
+      <Button fx:id="edit1" blendMode="SCREEN" layoutX="26.0" layoutY="313.0" mnemonicParsing="false" onAction="#delay" prefHeight="25.0" prefWidth="61.0" style="-fx-background-image: Users\khaoula\Documents\NetBeansProjects\KINDOOO\src\kindo\Image\iconedelete;" text="Delay" textFill="#250202" />
+      <Button layoutX="8.0" layoutY="6.0" mnemonicParsing="false" onAction="#gobackto" style="-fx-background-color: white;" text="Back" textFill="#1b1b1b" />
+   </children>
+</AnchorPane>

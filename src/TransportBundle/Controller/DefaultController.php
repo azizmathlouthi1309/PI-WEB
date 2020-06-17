@@ -5,7 +5,7 @@ namespace TransportBundle\Controller;
 use ClassesWithParents\D;
 use ClassBundle\Entity\Classe;
 use Doctrine\ORM\Mapping\Entity;
-use FirstBundle\Entity\Child;
+use EspaceParentBundle\Entity\Child;
 use FirstBundle\FirstBundle;
 use FirstBundle\Repository\ClasseRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -226,14 +226,14 @@ class DefaultController extends Controller
     {
         // Find your Account Sid and Auth Token at twilio.com/console
         $tel = $request->get('number');
-        $sid = "AC6d639a3f583fb4500f4d78782aea54a3";
-        $token = "b37099e7938daa67138098f3a41a48b9";
-        $twilio = new Client($sid,$token);
+        $sid = "AC6d836bce0a77691fe7146f351048e8f2";
+        $token = "ea6ad83377ca7411da97e340d28c3bb1";
+        $twilio = new Client($sid, $token);
         $message = $twilio->messages
             ->create($tel, // to
                 [
                     "body" => "Hi sir your child is in class :LIONS",
-                    "from" => "+12017402057"
+                    "from" => "+12029331218"
                 ]
             );
         return $this->render('default/transport/index.html.twig');
@@ -425,44 +425,48 @@ class DefaultController extends Controller
 
     public function sendmailAction()
     {
-        $transport = (new \Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
-            ->setUsername('aziz13mth@gmail.com')
-            ->setPassword('abdou15121963bab');
+        {
+            $transport = (new \Swift_SmtpTransport('smtp.googlemail.com', 465, 'ssl'))
+                ->setUsername('aziz13mth@gmail.com')
+                ->setPassword('abdou15121963bab');
 
 // Create the Mailer using your created Transport
-        $mailer = new \Swift_Mailer($transport);
-        $em=$this->getDoctrine()->getManager();
-        $children=$em->getRepository(Child::class)->findAll();
-        foreach ($children as $child)
-        {
-            if($child->getParent()->getId()==$this->getUser()->getId())
-            {
-                $classname=$child->getClasse()->getName();
-                $body = 'Hello, <p>'.$this->getUser().'<span>  Your Child is in Class '.$classname.'</span>.</p>';
+            $mailer = new \Swift_Mailer($transport);
+            $em = $this->getDoctrine()->getManager();
+            $children = $em->getRepository(Child::class)->findAll();
+            if (empty($children)) {
+                return new Response('kindo is empty');
+            } else {
+                foreach ($children as $child) {
+                    if ($child->getParentId() == $this->getUser()->getId()) {
+                        $classname = $child->getClasse()->getName();
+                        $body = 'Hello, <p>' . $this->getUser() . '<span>  Your Child is in Class ' . $classname . '</span>.</p>';
 
-                $message = (new \Swift_Message(('Response To Your Request')))
-                    ->setFrom(['aziz13mth@gmail.com' => 'KindoGarten'])
-                    ->setTo([$this->getUser()->getEmail()])
-                    ->setBody($body)
-                    ->setContentType('text/html');
+                        $message = (new \Swift_Message(('Response To Your Request')))
+                            ->setFrom(['aziz13mth@gmail.com' => 'KindoGarten'])
+                            ->setTo([$this->getUser()->getEmail()])
+                            ->setBody($body)
+                            ->setContentType('text/html');
 
 // Send the message
-                $mailer->send($message);
+                        $mailer->send($message);
+
+                    } else {
+                        $this->get('session')->getFlashBag()->add(
+                            'notice',
+                            'You have no child in our kindo'
+                        );
+                        $vehicules = $em->getRepository(Vehicule::class)->findAll();
+                        $affectations = $em->getRepository(Traffectation::class)->findAll();
+                        $drivers = $em->getRepository(Driver::class)->findAll();
+                        return $this->render('default/transport/transport.html.twig', array("user" => $this->getUser(), "vehicules" => $affectations));
+                    }
+                }
+                return $this->redirectToRoute('transport_homepage');
+// Create a message
 
             }
-            else{
-                $this->get('session')->getFlashBag()->add(
-                    'notice',
-                    'You have no child in our kindo'
-                );
-                $vehicules = $em->getRepository(Vehicule::class)->findAll();
-                $affectations = $em->getRepository(Traffectation::class)->findAll();
-                $drivers = $em->getRepository(Driver::class)->findAll();
-                return $this->render('default/transport/transport.html.twig',array("user" => $this->getUser(), "vehicules" => $affectations));
-            }
         }
-        return $this->redirectToRoute('transport_homepage');
-// Create a message
 
     }
 }

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.AfficherEnfantController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="67.0">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Desktop/Kindo%20Final/Kindo%20Final/src/img/adminbck.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tableview" layoutX="74.0" layoutY="70.0" prefHeight="261.0" prefWidth="522.0">
+        <columns>
+          <TableColumn fx:id="ChildId" prefWidth="75.0" text="Child Id" />
+          <TableColumn fx:id="ParentId" prefWidth="75.0" text="Parent Id" />
+            <TableColumn fx:id="FirstNameChild" prefWidth="90.0" text="FirstName " />
+            <TableColumn fx:id="LastNameChild" prefWidth="77.0" text="Last Name " />
+            <TableColumn fx:id="Level" prefWidth="76.0" text="level" />
+            <TableColumn fx:id="ClassName" prefWidth="81.0" text="Class Name" />
+            <TableColumn fx:id="Age" prefWidth="46.0" text="Age" />
+        </columns>
+      </TableView>
+      <Text fill="#750000" layoutX="72.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Children's List">
+         <font>
+            <Font name="Calibri Bold" size="34.0" />
+         </font></Text>
+    <Button fx:id="menu" layoutX="5.0" layoutY="361.0" mnemonicParsing="false" onAction="#ReturnMenu" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: white;" text="Back" />
+      <Button fx:id="pdf" layoutX="390.0" layoutY="349.0" mnemonicParsing="false" onAction="#GeneratePDF" style="-fx-background-color: #f13800;" text="Generate PDF" textFill="WHITE" />
+      <Button fx:id="Delete" layoutX="179.0" layoutY="349.0" mnemonicParsing="false" onAction="#supprimerEnfant" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #f13800;" text="DeleteChild" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="prenom" layoutX="377.0" layoutY="31.0" onKeyReleased="#ChercherEnfant" promptText="username" />
+      <Text fill="#7c0303" layoutX="537.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

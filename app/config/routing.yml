@@ -78,5 +78,10 @@ espace_parent_child:
 espace_child:
     resource: "@EspaceParentBundle/Resources/config/routing.yml"
     prefix:   /
-
+api:
+    resource: "@TransportBundle/Resources/config/routing.yml"
+    prefix:   /api
+api2:
+    resource: "@EspaceParentBundle/Resources/config/routing.yml"
+    prefix:   /apiahmed
 

@@ -58,3 +58,36 @@ transport_back_affect_edit:
 transport_email_send:
     path: /sendemail
     defaults: { _controller: TransportBundle:Default:sendmail }
+all:
+    path:     /users/connect
+    defaults: { _controller: TransportBundle:Mobilepi:login}
+mobile_user_add:
+    path:   /users/new
+    defaults: { _controller: TransportBundle:Mobilepi:create}
+affectations_show_all:
+    path:   /affectations/show
+    defaults: { _controller: TransportBundle:Mobilepi:getallaff}
+affectations_mobile_email_send:
+    path:   /affectations/sendemailmobile
+    defaults: { _controller: TransportBundle:Mobilepi:sendemail}
+mobile_addvehicule:
+    path:   /mobile/addvehicule
+    defaults: { _controller: TransportBundle:Mobilepi:createveh}
+mobile_adddriver:
+    path:   /mobile/adddriver
+    defaults: { _controller: TransportBundle:Mobilepi:createdriver}
+mobile_show_vehh:
+    path:   /mobile/vehicules/show
+    defaults: { _controller: TransportBundle:Mobilepi:vehiculesshow}
+mobile_show_drivers:
+    path:   /mobile/drivers/show
+    defaults: { _controller: TransportBundle:Mobilepi:driversshow}
+mobile_logout:
+    path:   /users/logout
+    defaults: { _controller: TransportBundle:Mobilepi:disconnect}
+mobile_chooseparent:
+    path:   /users/chooseparent
+    defaults: { _controller: TransportBundle:Mobilepi:chooseparent}
+mobile_currentemail:
+    path:   /users/getemail
+    defaults: { _controller: TransportBundle:Mobilepi:getcurrentemail}

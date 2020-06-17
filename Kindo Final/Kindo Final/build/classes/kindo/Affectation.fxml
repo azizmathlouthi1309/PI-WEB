@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" cache="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="609.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.AffectationController">
+   <children>
+      <ImageView fitHeight="466.0" fitWidth="609.0">
+         <image>
+            <Image url="@../img/Background.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#ff6f00" layoutX="167.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Change child's Class" wrappingWidth="275.470703125">
+         <font>
+            <Font name="System Bold" size="28.0" />
+         </font></Text>
+      <Text layoutX="11.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LastName" />
+      <Text layoutX="116.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text layoutX="14.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Destination Class" />
+      <Text layoutX="15.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Teacher name" />
+      <Text layoutX="9.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id of your child" />
+      <Button fx:id="Validate" layoutX="163.0" layoutY="419.0" mnemonicParsing="false" onAction="#Validate" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #07063f;" text="Validate" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <TextField fx:id="IdChild" layoutX="129.0" layoutY="91.0" onMouseExited="#Show" prefHeight="25.0" prefWidth="162.0" promptText="Child Id..." />
+      <TextField fx:id="ChildName" layoutX="129.0" layoutY="165.0" prefHeight="25.0" prefWidth="162.0" />
+      <TextField fx:id="TeacherName" layoutX="129.0" layoutY="361.0" prefHeight="25.0" prefWidth="162.0" />
+      <ComboBox fx:id="DestinationClass" layoutX="127.0" layoutY="320.0" prefHeight="25.0" prefWidth="162.0" />
+      <Text layoutX="10.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+      <TextField fx:id="FirstName" layoutX="129.0" layoutY="126.0" prefHeight="25.0" prefWidth="162.0" />
+      <TextField fx:id="Age" layoutX="129.0" layoutY="202.0" prefHeight="25.0" prefWidth="162.0" />
+      <Text layoutX="14.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
+      <Text layoutX="13.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Level" />
+      <TextField fx:id="Level" layoutX="129.0" layoutY="242.0" prefHeight="25.0" prefWidth="162.0" />
+      <ImageView fx:id="tajrba" fitHeight="268.0" fitWidth="200.0" layoutX="357.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="ActualClass" layoutX="127.0" layoutY="280.0" prefHeight="25.0" prefWidth="162.0" />
+      <Text layoutX="13.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Actual Class" />
+      <Button fx:id="meni" layoutX="513.0" layoutY="421.0" mnemonicParsing="false" onAction="#Meni" prefHeight="31.0" prefWidth="63.0" style="-fx-background-color: #07063f;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="id_label" layoutX="52.0" layoutY="425.0" text="Label" />
+                  <Label fx:id="password_label" layoutX="19.0" layoutY="425.0" text="Label" />
+      <ImageView fitHeight="75.0" fitWidth="74.0" layoutX="22.0" layoutY="9.0">
+         <image>
+            <Image url="@../img/parent.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

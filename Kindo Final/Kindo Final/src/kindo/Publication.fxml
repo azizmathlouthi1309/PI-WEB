@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.PublicationController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../img/Background.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tabact" layoutX="203.0" layoutY="101.0" onMouseClicked="#handleRowSelect" prefHeight="263.0" prefWidth="392.0">
+         <columns>
+            <TableColumn fx:id="subjectab" prefWidth="100.0" text="Subject" />
+            <TableColumn fx:id="descriptiontab" prefWidth="192.0" text="Content" />
+            <TableColumn fx:id="classtab" prefWidth="116.0" text="Class" />
+         </columns>
+      </TableView>
+      <TextField fx:id="tfsearch" layoutX="203.0" layoutY="62.0" onAction="#Search" prefHeight="27.0" prefWidth="293.0" promptText=" Search..." style="-fx-background-color: white; -fx-border-color: orange;" />
+      <Button layoutX="538.0" layoutY="372.0" mnemonicParsing="false" onAction="#goback" prefHeight="22.0" prefWidth="57.0" style="-fx-background-color: #ff3f00;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="id_label" text="Label" />
+      <Label fx:id="password_label" layoutY="18.0" text="Label" />
+      <Button fx:id="btnAdd" layoutX="16.0" layoutY="296.0" mnemonicParsing="false" onAction="#Add" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #ffb31a;" text="Add" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="110.0" layoutY="337.0" mnemonicParsing="false" onAction="#Delete" prefHeight="22.0" prefWidth="81.0" style="-fx-background-color: #1f4060;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="res" layoutX="16.0" layoutY="337.0" mnemonicParsing="false" onAction="#Reset" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: #ffb31a;" text="Reset" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="16.0" layoutY="69.0" prefHeight="22.0" prefWidth="139.0" text="Subject">
+         <font>
+            <Font name="Calibri" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfsubject" layoutX="14.0" layoutY="91.0" prefHeight="25.0" prefWidth="174.0" promptText="Subject" />
+      <TextField fx:id="tfcontent" layoutX="14.0" layoutY="151.0" prefHeight="92.0" prefWidth="174.0" promptText="Content" />
+      <Button fx:id="btnUpdate" layoutX="110.0" layoutY="296.0" mnemonicParsing="false" onAction="#Update" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: #1f4060;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Corbel Bold" size="14.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="classbox" layoutX="15.0" layoutY="257.0" prefHeight="25.0" prefWidth="174.0" promptText="Class" />
+      <Label layoutX="16.0" layoutY="125.0" prefHeight="22.0" prefWidth="139.0" text="Content">
+         <font>
+            <Font name="Calibri" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="203.0" layoutY="17.0" prefHeight="36.0" prefWidth="217.0" text="Posts Management" textFill="#ff3f00">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

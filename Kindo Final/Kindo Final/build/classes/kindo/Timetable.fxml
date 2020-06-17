@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.TimetableController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../img/adminbck.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="86.0" layoutY="146.0" text="Monday" textFill="WHITE" />
+      <Label layoutX="86.0" layoutY="177.0" text="Tuesday" textFill="WHITE" />
+      <Label layoutX="86.0" layoutY="264.0" text="Friday" textFill="WHITE" />
+      <Label layoutX="86.0" layoutY="234.0" text="Thursday" textFill="WHITE" />
+      <Label layoutX="86.0" layoutY="205.0" text="Wednsday" textFill="WHITE" />
+      <ComboBox fx:id="Lundi1" layoutX="153.0" layoutY="142.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Lundi2" layoutX="243.0" layoutY="142.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Mardi1" layoutX="153.0" layoutY="172.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Mardi2" layoutX="244.0" layoutY="172.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Mercredi1" layoutX="153.0" layoutY="201.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Mercredi2" layoutX="244.0" layoutY="201.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Jeudi1" layoutX="153.0" layoutY="230.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Jeudi2" layoutX="244.0" layoutY="230.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Vendredi1" layoutX="153.0" layoutY="260.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Vendredi2" layoutX="244.0" layoutY="260.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="classe" layoutX="142.0" layoutY="56.0" prefWidth="150.0" promptText="Classs Name" />
+      <Label layoutX="92.0" layoutY="60.0" prefHeight="17.0" prefWidth="44.0" text="Class" textFill="WHITE" />
+      <Button layoutX="221.0" layoutY="309.0" mnemonicParsing="false" onAction="#GeneratPDF" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #ff5c33;" text="Create Time Table" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <ComboBox fx:id="Lundi3" layoutX="338.0" layoutY="142.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Lundi4" layoutX="428.0" layoutY="142.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Mardi3" layoutX="338.0" layoutY="172.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Mardi4" layoutX="429.0" layoutY="172.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Mercredi3" layoutX="338.0" layoutY="201.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Mercredi4" layoutX="429.0" layoutY="201.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Jeudi3" layoutX="338.0" layoutY="230.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Jeudi4" layoutX="429.0" layoutY="230.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Vendredi3" layoutX="338.0" layoutY="260.0" prefHeight="25.0" prefWidth="85.0" />
+      <ComboBox fx:id="Vendredi4" layoutX="429.0" layoutY="260.0" prefHeight="25.0" prefWidth="85.0" />
+      <Label layoutX="307.0" layoutY="60.0" prefHeight="17.0" prefWidth="56.0" text="Semaine" textFill="WHITE" />
+      <TextField fx:id="tfdate" layoutX="361.0" layoutY="56.0" promptText="month/days.." />
+      <Button layoutX="490.0" layoutY="353.0" mnemonicParsing="false" onAction="#gobacktothefuture" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: #ff5c33;" text="Back" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -53,3 +53,15 @@ newclass_child:
 view_delete2:
     path:     /delleteview2/{id}
     defaults: { _controller: EspaceParentBundle:view:delleteview2 }
+view_mobile:
+  path:     /addview
+  defaults: { _controller: EspaceParentBundle:Mobile:addview }
+child_mobile:
+  path:     /addchild
+  defaults: { _controller: EspaceParentBundle:Mobile:addchild }
+child_mobile_show:
+  path:     /viewallchildren
+  defaults: { _controller: EspaceParentBundle:Mobile:showchild }
+view_mobile_show:
+  path:     /viewallviews
+  defaults: { _controller: EspaceParentBundle:Mobile:showview }

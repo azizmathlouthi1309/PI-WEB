@@ -52,7 +52,7 @@ class MenuController extends Controller
             $request->query->getInt('limit',2)
         );
         return $this->render('menu/indexF.html.twig', array(
-            're' => $menus,
+            'menus' => $menus,
         ));
     }
     /**

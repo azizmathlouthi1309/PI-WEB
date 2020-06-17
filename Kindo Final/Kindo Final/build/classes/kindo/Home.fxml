@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.HomeController">
+   <children>
+      <ImageView fitHeight="543.0" fitWidth="600.0" layoutX="-1.0" layoutY="-119.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/Background.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="desactivate" layoutX="78.0" layoutY="331.0" mnemonicParsing="false" onAction="#desactivate" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #150961;" text="Desactivate account" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="username" layoutX="116.0" layoutY="120.0" />
+      <TextField fx:id="email" layoutX="115.0" layoutY="223.0" />
+      <Label layoutX="19.0" layoutY="119.0" text="User Name" />
+      <Label layoutX="19.0" layoutY="229.0" text="Email" />
+      <Label layoutX="19.0" layoutY="155.0" text="Account Type" />
+      <Label fx:id="id" layoutX="40.0" layoutY="380.0" text="Label" />
+      <Button fx:id="update" layoutX="44.0" layoutY="278.0" mnemonicParsing="false" onAction="#update" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #1e8228;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="show" layoutX="157.0" layoutY="278.0" mnemonicParsing="false" onAction="#show" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: Orange;" text="Show Infos" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Label fx:id="type" layoutX="122.0" layoutY="155.0" prefHeight="17.0" prefWidth="111.0" />
+      <Button fx:id="logout" layoutX="513.0" layoutY="24.0" mnemonicParsing="false" onAction="#logout" prefHeight="17.0" prefWidth="73.0" style="-fx-background-color: #e72716;" text="Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font></Button>
+      <ImageView fitHeight="134.0" fitWidth="202.0" layoutX="11.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/final%20logo%20(2).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="246.0" fitWidth="233.0" layoutX="327.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Documents/NetBeansProjects/Kindo/kindergarten%20(1).png" />
+         </image>
+      </ImageView>
+      <Label layoutX="19.0" layoutY="185.0" text="Password" />
+      <TextField fx:id="password" layoutX="115.0" layoutY="181.0" />
+      <Label fx:id="password_label" layoutX="143.0" layoutY="380.0" text="Label" />
+   </children>
+</AnchorPane>

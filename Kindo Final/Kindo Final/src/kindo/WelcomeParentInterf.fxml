@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="label" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.WelcomeParentInterfController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="file:/C:/Users/Administrator/Desktop/Kindo%20Final/Kindo%20Final/src/img/orangebck.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="400.0" fitWidth="594.0" opacity="0.72">
+         <image>
+            <Image url="@orangebck.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" layoutX="217.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME !">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="156.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please pick an option">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </Text>
+      <Button layoutX="158.0" layoutY="186.0" mnemonicParsing="false" onMouseClicked="#gotorest" prefHeight="25.0" prefWidth="278.0" style="-fx-background-color: #1823BD;" text="Go to Restauration services" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="158.0" layoutY="247.0" mnemonicParsing="false" onMouseClicked="#gotonurs" prefHeight="25.0" prefWidth="278.0" style="-fx-background-color: #00D82B;" text="Go to Nursery services" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="18.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#interfuser" style="-fx-background-color: white;" text="Back" />
+   </children>
+</AnchorPane>

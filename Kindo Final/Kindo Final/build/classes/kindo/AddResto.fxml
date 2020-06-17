@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kindo.AddRestoController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../img/adminbck.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#e1e1e1" layoutX="180.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter subscription's infos">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="idF" layoutX="197.0" layoutY="164.0" prefHeight="25.0" prefWidth="34.0" />
+      <TextField fx:id="startF" layoutX="197.0" layoutY="203.0" />
+      <TextField fx:id="endF" layoutX="197.0" layoutY="242.0" />
+      <Button fx:id="sumbitbtn" layoutX="392.0" layoutY="190.0" mnemonicParsing="false" onMouseClicked="#addresto" style="-fx-background-color: #19a407;" text="Submit" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Text fill="#8d8d8d" layoutX="139.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" />
+      <Text fill="#8d8d8d" layoutX="132.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date Begin" />
+      <Text fill="#8d8d8d" layoutX="132.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date End" />
+      <Button layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onMouseClicked="#returnto" prefHeight="25.0" prefWidth="48.0" style="-fx-background-color: white;" text="Back" />
+   </children>
+</AnchorPane>
