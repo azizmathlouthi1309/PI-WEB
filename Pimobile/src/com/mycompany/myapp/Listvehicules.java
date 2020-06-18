@@ -6,8 +6,6 @@
 
 package com.mycompany.myapp;
 
-import com.codename1.components.SpanLabel;
-import com.codename1.ui.Button;
 import com.codename1.ui.Container;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
@@ -15,7 +13,6 @@ import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import com.mycompany.Services.ServiceVehicule;
-import com.mycompany.entities.Driver;
 import com.mycompany.entities.Vehicule;
 import java.util.ArrayList;
 import java.util.List;

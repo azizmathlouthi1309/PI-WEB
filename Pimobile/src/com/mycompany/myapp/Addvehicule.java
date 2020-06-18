@@ -11,13 +11,10 @@ import com.codename1.ui.Dialog;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.TextField;
-import com.codename1.ui.events.ActionEvent;
-import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import com.mycompany.entities.Vehicule;
 import com.mycompany.Services.ServiceVehicule;
-import static java.lang.Integer.parseInt;
 
 /**
  *
